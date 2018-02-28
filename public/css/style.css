@@ -1,0 +1,33 @@
+.form-group.required .control-label:after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+.loading {
+    background: lightgoldenrodyellow url('../images/processing.gif') no-repeat center 65%;
+    height: 80px;
+    width: 100px;
+    position: fixed;
+    border-radius: 4px;
+    left: 50%;
+    top: 50%;
+    margin: -40px 0 0 -50px;
+    z-index: 2000;
+    display: none;
+}
+
+.nav#sidebar > li > ul {
+    margin-left: 25px;
+}
+.nav#sidebar > li > a {
+    color: lightyellow;
+    padding: 7px;
+}
+.nav#sidebar > li > a:hover,
+.nav#sidebar > li > a:focus,
+.nav#sidebar > li.active > a {
+    text-decoration: none;
+    background-color:darkgoldenrod;
+    border-radius: 0px;
+}

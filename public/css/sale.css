@@ -1,0 +1,133 @@
+.pay {
+    /*background: darkblue;*/
+    margin: 10px;
+    margin-left: 0px;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    /*color: #f5f5f5;*/
+    float: left;
+    position: relative;
+    width: 30%;
+    margin-bottom: 0px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.menu {
+    background: #2b99eb;
+    color: white;
+    margin: 10px;
+    margin-left: 0px;
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    font-size: 20px;
+    float: left;
+    position: relative;
+    width: 31%;
+    margin-bottom: 0px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px outset darkgrey;
+}
+
+.active {
+    color: yellow;
+    border: 2px outset yellow;
+}
+
+.tbl {
+    margin: 12px;
+    margin-left: 0px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f5f5f5;
+    float: left;
+    width: 80px;
+    position: relative;
+    margin-bottom: 0px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+a.pay {
+    text-decoration: none;
+}
+
+.pay:hover {
+
+}
+
+.opt {
+    /*text-shadow: 0 1px 0 whitesmoke;*/
+    padding: 18px;
+    float: left;
+    font-size: 26px;
+    color: #f5f5f5;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 10px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.del {
+    pointer-events: none;
+}
+
+.Free {
+    background: #d3e0f5;
+}
+
+.Busy {
+    background: brown;
+}
+
+.Printed {
+    background: green;
+}
+
+span.edit a {
+    position: absolute;
+    font-size: 12px;
+    right: 2px;
+    top: 2px;
+    color: #ffff00;
+}
+
+span.symbol {
+    position: absolute;
+    float: left;
+    bottom: 0px;
+    left: 0px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: gold;
+    border-radius: 2px;
+    padding: 3px;
+    /*background: ghostwhite;*/
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background: whitesmoke;
+}
+
+.unselect {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+}
