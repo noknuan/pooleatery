@@ -1,7 +1,7 @@
 <div class="modal-body">
     <div class="row">
         <div class="col-md-7">
-            <table class="table">
+            <table class="table" >
                 <thead>
                 <tr>
                     <th>Description</th>
@@ -18,12 +18,12 @@
                             <td>
                                 {{$orderDetail->description}}
                             </td>
-                            <td>
+                            <td >
                                 {{$orderDetail->quantity}}
                             </td>
-                            <td align="right">$ {{number_format($orderDetail->price,2)}}</td>
+                            <td align="right"> {{number_format($orderDetail->price,1)}}</td>
                             <td align="right">
-                                $ {{number_format($orderDetail->price * $orderDetail->quantity* (1 - $orderDetail->discount / 100),2)}}</td>
+                                 {{number_format($orderDetail->price * $orderDetail->quantity* (1 - $orderDetail->discount / 100),2)}}</td>
                         </tr>
                         <?php if (empty($orderDetail->deleted_at)) $total += ($orderDetail->price * $orderDetail->quantity * (1 - $orderDetail->discount / 100)); ?>
                     @endforeach
@@ -39,7 +39,7 @@
                         </tr>
                         <tr>
                             <th style="text-align: right;padding-right: 20px">Total:</th>
-                            <th style="text-align: right">$ {{number_format($total*(1-$order->discount/100),2)}}</th>
+                            <th style="text-align: right"> {{number_format($total*(1-$order->discount/100),2)}}</th>
                         </tr>
                     </table>
                 </div>
@@ -47,11 +47,12 @@
         </div>
         <div class="col-md-5">
             <div class="form-group required" id="form-usd-error">
-                {!! Form::label("usd","Cash in USD",["class"=>"control-label"]) !!}
+                {!! Form::label("usd","Cash input",["class"=>"control-label"]) !!}
                 {!! Form::text("usd",0,["class"=>"form-control required","id"=>"focus","autocomplete"=>"off"]) !!}
                 <span id="usd-error" class="help-block"></span>
             </div>
         </div>
+
     </div>
 </div>
 <div class="modal-footer">

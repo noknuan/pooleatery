@@ -1,8 +1,7 @@
 <center>
     <img src="{{asset('images/logo.png')}}" height=80px" width="150px"/>
-    <h2 style="font-size:16px;margin:0">SOURKEA RESTAURANT</h2>
-    <i style="font-size:11px;width:90%;display:block">Address: #33, Steet 99, Boeung Trabek, Chamkar Mon, Phnom Penh.
-        Tel: 069 868 768, 078 551 115</i>
+    <h2 style="font-size:16px;margin:0">The Pool Eatery</h2>
+    <i style="font-size:11px;width:90%;display:block">Address: 100 Leaigmuang Road Pakpeak Muang Kanchanaburi</i>
     <h3 style="padding: 0px;margin: 0px">Invoice</h3>
 </center>
 <hr style="size:2px;border:inset;margin-top: 0px;padding-top: 0px">
@@ -44,10 +43,10 @@
             <td align="center">{{$i++}}</td>
             <td align="left">{{$orderDetail->description}}</td>
             <td align="center">{{$orderDetail->quantity}}</td>
-            <td align="right">$ {{number_format($orderDetail->price,2)}}</td>
+            <td align="right">{{number_format($orderDetail->price,2)}}</td>
             {{--<td align="center">{{$orderDetail->discount}}%</td>--}}
             <td align="right">
-                $ {{number_format($orderDetail->quantity * $orderDetail->price * (1 - $orderDetail->discount / 100),2)}}</td>
+                 {{number_format($orderDetail->quantity * $orderDetail->price * (1 - $orderDetail->discount / 100),2)}}</td>
             <?php if (empty($orderDetail->deleted_at)) $total += ($orderDetail->price * $orderDetail->quantity * (1 - $orderDetail->discount / 100)); ?>
         </tr>
     @endforeach
@@ -60,16 +59,16 @@
                 @if($order->discount>0)
                     <tr>
                         <th style="text-align: right;padding-right: 20px">Grand Total:</th>
-                        <th style="text-align: right">$ {{number_format($total,2)}}</th>
+                        <th style="text-align: right">{{number_format($total,2)}}</th>
                     </tr>
                     <tr>
                         <th style="text-align: right;padding-right: 20px">Discount ({{$order->discount}}%):</th>
-                        <th style="text-align: right">$ {{number_format($order->discount*$total/100,2)}}</th>
+                        <th style="text-align: right">{{number_format($order->discount*$total/100,2)}}</th>
                     </tr>
                 @endif
                 <tr>
                     <th style="text-align: right;padding-right: 20px">Net Amount:</th>
-                    <th style="text-align: right">$ {{number_format($total*(1-$order->discount/100),2)}}</th>
+                    <th style="text-align: right">{{number_format($total*(1-$order->discount/100),2)}} (บาท)</th>
                 </tr>
             </table>
         </td>

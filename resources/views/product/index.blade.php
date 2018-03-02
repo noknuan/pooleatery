@@ -45,8 +45,8 @@
             </i>
         </th>
         <th class="hidden-xs hidden-sm">Category</th>
-        <th style="text-align: right">Unitprice</th>
-        <th width="140px"></th>
+        <th style="text-align: right">Unitprice (Bath)</th>
+        <th width="140px" style="text-align: center">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -61,7 +61,7 @@
             <td style="vertical-align: middle">{{$product->name}}</td>
             <td class="hidden-xs hidden-sm"
                 style="vertical-align: middle">{{$product->product_category?$product->product_category->name:''}}</td>
-            <td align="right" style="vertical-align: middle">$ {{$product->unitprice}}</td>
+            <td align="right" style="vertical-align: middle">  {{$product->unitprice}}</td>
             <td style="text-align: center;vertical-align: middle">
                 <a class="btn btn-primary btn-xs" title="Edit"
                    href="javascript:ajaxLoad('product/update/{{$product->id}}')">

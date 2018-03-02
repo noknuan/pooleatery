@@ -15,7 +15,7 @@
     </div>
 </div>
 <h2 style="text-align: center;padding: 10px;background: whitesmoke">
-    $ {{number_format($orders['Total']['total'],2)}}</h2>
+     {{number_format($orders['Total']['total'],2)}} บาท</h2>
 <div class="row">
     <div class="col-md-6">
         <table class="table table-bordered">
@@ -30,7 +30,7 @@
                 @if($key!='Total')
                     <tr style="font-size: 14px">
                         <td>{{$key}}</td>
-                        <td align="right">$ {{number_format($value['total'],2)}}</td>
+                        <td align="right"> {{number_format($value['total'],2)}}</td>
                     </tr>
                 @endif
             @endforeach
@@ -50,7 +50,7 @@
                 @if($key!='Total')
                     <tr style="font-size: 14px">
                         <td>{{$key}}</td>
-                        <td align="right">$ {{number_format($value['total'],2)}}</td>
+                        <td align="right"> {{number_format($value['total'],2)}}</td>
                     </tr>
                 @endif
             @endforeach

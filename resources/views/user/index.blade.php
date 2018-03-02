@@ -36,7 +36,7 @@
         </th>
         <th class="hidden-xs hidden-sm">Role</th>
         <th width="50" align="center">Active</th>
-        <th width="140px"></th>
+        <th width="140px" style="text-align: center">Action</th>
     </tr>
     </thead>
     <tbody>

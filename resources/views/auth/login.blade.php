@@ -10,16 +10,13 @@
     <link href="{{ asset('bootstrap-3.3.7/css/bootstrap-theme.min.css') }}" rel="stylesheet">
 </head>
 <body>
-<div class="container-fluid" style="background: #eef2f4;border-bottom: 5px solid whitesmoke">
-    <img src="{{asset('images/logo.png')}}" height="100px" width="150px"/>
-</div>
 <div class="container-fluid">
     <div class="row-fluid" style="margin-top: 10px">
         <div class="col-md-6 col-md-offset-3" style="padding-top: 1px;padding-bottom: 50px">
-            <h1 class="page-header">Login</h1>
+            <h1 class="page-header">POS System Login</h1>
             <div class="row">
                 <div class="col-sm-5 hidden-xs" style="text-align: center">
-                    <img src="{{asset("images/login.png")}}"/>
+                    <img src="{{asset("images/logo.png")}}" width="200" height="100"/>
                 </div>
                 <div class="col-sm-7">
                     {!! Form::open(['url'=>'/login']) !!}

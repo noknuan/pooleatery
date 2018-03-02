@@ -21,9 +21,18 @@
         }
     </style>
 </head>
-<body style="background: grey">
-<div class="container-fluid" style="background: #eef2f4;border-bottom: 5px solid whitesmoke">
-    <img src="{{asset('images/logo.png')}}" height="80px" width="200px"/>
+<body style="background:#787c62">
+<div class="pull-right" style="padding-top: 10px;font-size: 16px">
+    Hi, {{ucwords(Auth::user()->username)}} ( <a href="{{url('/logout')}}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">Logout</a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+          style="display: none;">
+        {{ csrf_field() }}
+    </form>
+    )
+</div>
+<div class="container-fluid" style="background: #ffffff;border-bottom: 5px solid #c4c4bf">
+    <img src="{{asset('images/logo.png')}}" height="80px" width="170px"/>
     <button class="navbar-toggle collapsed" data-toggle="collapse"
             data-target="#menu" aria-expanded="false">
         <i style="color: darkgrey" class="glyphicon glyphicon-menu-hamburger"></i> Menu
@@ -32,33 +41,21 @@
 <div class="container-fluid" style="padding-bottom: 160px">
     <div class="row-fluid" style="margin-top: 10px">
         <div class="col-sm-4 col-md-3">
-            <div class="collapse navbar-collapse" id="menu" style="background:darkslateblue">
-                <div style="background: grey;margin: 15px 0;padding: 5px 0;text-align: center">
-                    <table width="100%">
-                        <tr>
-                            <td width="30%" style="padding:0 5px 0 5px"><img
-                                        src="{{url('images/default_profile.png')}}"
-                                        width="100%"
-                                        class="img-rounded"/></td>
-                            <td>
-                                <b style="font-size: 150%;color: yellow">{{ucwords(Auth::user()->username)}}</b><br/>
-                                <a href="{{url('/logout')}}" style="font-size: 14px;color: whitesmoke;" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();"><i
-                                            class="glyphicon glyphicon-log-out"></i>
-                                    Logout</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+            <div class="collapse navbar-collapse" id="menu" style="background:#7eb1ff">
+                <div style="background: grey;margin: 10px 0;padding: 4px 0">
+                <table width="100%">
+                    <tr bgcolor="#a9a9a9">
+                        <td width="30%" style="padding:0 5px 0 5px"></td>
+                        <td>
+                            <b style="font-size: 150%;color: yellow"> Admin Menu </b></td>
+                    </tr>
+                </table>
+            </div>
                 <ul class="nav nav-stacked" id="sidebar" style="margin-bottom: 100px">
                     <li class="nav_home">
-                        <a href="#home"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a>
+                        <a href="#home"><i class="glyphicon glyphicon-dashboard"></i> Sale Summary</a>
                     </li>
-                    <li><a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-th"></i> Main Data</a>
+                    <li><a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-th"></i> Master data</a>
                         <ul class="nav" id="sidebar">
                             <li class="nav_table"><a href="#table"> Table</a></li>
                             <li class="nav_customer"><a href="#customer"> Customer</a></li>
@@ -97,10 +94,12 @@
                             Change
                             Password</a>
                     </li>
+
                 </ul>
             </div>
+
         </div>
-        <div class="col-sm-8 col-md-9" style="background: white;padding-top: 1px;padding-bottom: 50px" id="content">
+        <div class="col-sm-8 col-md-9" style="background: #e6e7e3;padding-top: 1px;padding-bottom: 50px" id="content">
         </div>
     </div>
 </div>

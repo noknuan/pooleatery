@@ -32,8 +32,8 @@
         </div>
     </div>
 </div>
-<div class="container-fluid" style="background: #eef2f4;border-bottom: 5px solid whitesmoke">
-    <img src="/images/logo.png" height="50px" width="100px"/>
+<div class="container-fluid" style="background: #ffffff;border-bottom: 5px solid #c4c4bf">
+    <img src="/images/logo.png" height="80px" width="170px"/>
     <div class="pull-right" style="padding-top: 10px;font-size: 16px">
         Hi, {{ucwords(Auth::user()->username)}} ( <a href="{{url('/logout')}}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">Logout</a>

@@ -31,7 +31,7 @@
                class="glyphicon  {{ Session::get('table_field')=='name'?(Session::get('table_sort')=='asc'?'glyphicon-sort-by-alphabet':'glyphicon-sort-by-alphabet-alt'):'' }}">
             </i>
         </th>
-        <th width="140px"></th>
+        <th width="140px" style="text-align: center">Action</th>
     </tr>
     </thead>
     <tbody>

@@ -32,7 +32,7 @@
             </i>
         </th>
         <th style="text-align: right" width="100px">Discount</th>
-        <th width="140px"></th>
+        <th width="140px" style="text-align: center">Action</th>
     </tr>
     </thead>
     <tbody>

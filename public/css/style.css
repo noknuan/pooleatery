@@ -21,13 +21,13 @@
     margin-left: 25px;
 }
 .nav#sidebar > li > a {
-    color: lightyellow;
+    color: rgba(1, 2, 3, 0.97);
     padding: 7px;
 }
 .nav#sidebar > li > a:hover,
 .nav#sidebar > li > a:focus,
 .nav#sidebar > li.active > a {
     text-decoration: none;
-    background-color:darkgoldenrod;
+    background-color: #efe20b;
     border-radius: 0px;
 }

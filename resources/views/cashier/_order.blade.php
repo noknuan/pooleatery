@@ -4,32 +4,27 @@
     }
 </style>
 <div class="row" style="padding-left: 20px">
-    <a title="Table" class="btn btn-warning pay" data-toggle="modal" data-target="#modal"
+    <a title="Table" class="btn btn-default pay" data-toggle="modal" data-target="#modal"
        href="cashier/table">
         <b id="table_id">{{Session::has('table_id')?\App\Table::find(Session::get('table_id'))->name:'Table #'}}</b>
     </a>
-    <a class="btn btn-primary pay"
-       data-toggle="modal" data-target="#modal" href="cashier/change-table">
-        Change
-    </a>
+
     <a class="btn btn-primary pay" data-toggle="modal"
        data-target="#modal_open" href="cashier/open">
-        Open
+        Open New Order
     </a>
-    <div class="pay" style="background: none;padding-left: 0px;padding-right: 0px;padding-top: 5px">
-        <input @if(Session::get('table_id')=='') disabled @endif type="text" class="form-control" placeholder="Code"
-               onkeydown="if (event.keyCode == 13) ajaxLoad('cashier/order/'+this.value,'orderList')"/>
-    </div>
+
     <a style="@if(Session::get('table_id')=='' || count($order)==0) pointer-events: none @endif"
        href="{{url("cashier/print")}}"
        target="_blank" class="btn btn-danger pay">
         Print
     </a>
-    <a class="btn btn-success pay" data-toggle="modal" data-target="#modal_pay" href="cashier/pay"
+    <a class="btn btn-warning pay" data-toggle="modal" data-target="#modal_pay" href="cashier/pay"
        style="@if(Session::get('table_id')=='' || count($order)==0) pointer-events: none @endif">
         Pay
     </a>
 </div>
+<br>
 <div class="row" style="background: white;padding: 10px 10px 30px 10px">
     <table class="table">
         <thead>
@@ -37,7 +32,7 @@
             <th style="margin: 0px;padding: 0px;vertical-align: middle" width="1px"></th>
             <th>Description</th>
             <th style="text-align: center">Qty</th>
-            <th style="text-align: right;">Price</th>
+            <th style="text-align: right; width: 30%">Price</th>
             <th style="text-align: right">Total</th>
             <th style="width: 1px"></th>
         </tr>
@@ -65,12 +60,12 @@
                     <td align="right">
                         <input onfocus="$(this).select()"
                                onchange="ajaxLoad('cashier/update-price/{{$orderDetail->id}}/'+this.value,'orderList')"
-                               type="text" style="width: 30px;border: none;height: 30px;text-align: right"
+                               type="text" style="width: 45px;border: none;height: 30px;text-align: right"
                                value="{{number_format($orderDetail->price,2)}}"/>
                     </td>
                     <td align="right">
                         <input type="text" style="width: 50px;border: none;height: 30px;text-align: right" readonly
-                               value="$ {{number_format($orderDetail->price * $orderDetail->quantity*(1-$orderDetail->discount/100),2)}}"/>
+                               value=" {{number_format($orderDetail->price * $orderDetail->quantity*(1-$orderDetail->discount/100),2)}}"/>
 
                     </td>
                     <td style="text-align: center;padding-top: 15px">
@@ -106,7 +101,7 @@
                 </tr>
                 <tr>
                     <th style="text-align: right;padding-right: 20px">Total:</th>
-                    <th style="text-align: right">$ {{number_format($total*(1-$order->discount/100),2)}}</th>
+                    <th style="text-align: right">{{number_format($total*(1-$order->discount/100),2)}}</th>
                 </tr>
             </table>
         </div>
