@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'key' => env('ase64:hPKm7CCT6lq8XQlcDaL21iEn4DLM0G0pVZzs1XI+Hr8='),
+    'key' => env('APP_KEY'),
 
 
     /*
