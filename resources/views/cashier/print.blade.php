@@ -25,12 +25,12 @@
 </table>
 <table style="width:100%;margin-top:10px" border="0" cellspacing="0" cellpadding="2px">
     <tr style="font-size:13px">
-        <th width="20px">No</th>
-        <th>Description</th>
-        <th style="width:8%;text-align: center;">Qty</th>
-        <th style="width:16%;text-align: right">Price</th>
+        <th width="20px">No(ลำดับ)</th>
+        <th>Description(รายการ)</th>
+        <th style="width:8%;text-align: center;">Qty(จำนวน)</th>
+        <th style="width:16%;text-align: right">Price(ราคา)</th>
         {{--<th style="width:12%">D.C</th>--}}
-        <th style="width:18%;text-align: right">Total</th>
+        <th style="width:18%;text-align: right">Total(ยอดรวม)</th>
     </tr>
     <tr style="font-size:14px">
         <th colspan="6" align="left">
@@ -58,16 +58,16 @@
             <table width="100%" style="font-size: 12px">
                 @if($order->discount>0)
                     <tr>
-                        <th style="text-align: right;padding-right: 20px">Grand Total:</th>
+                        <th style="text-align: right;padding-right: 20px">Grand Total(ยอดรวมทั้งหมด):</th>
                         <th style="text-align: right">{{number_format($total,2)}}</th>
                     </tr>
                     <tr>
-                        <th style="text-align: right;padding-right: 20px">Discount ({{$order->discount}}%):</th>
+                        <th style="text-align: right;padding-right: 20px">Discount(ส่วนลด) ({{$order->discount}}%):</th>
                         <th style="text-align: right">{{number_format($order->discount*$total/100,2)}}</th>
                     </tr>
                 @endif
                 <tr>
-                    <th style="text-align: right;padding-right: 20px">Net Amount:</th>
+                    <th style="text-align: right;padding-right: 20px">Net Amount(รวมทั้งสิ้น):</th>
                     <th style="text-align: right">{{number_format($total*(1-$order->discount/100),2)}} (บาท)</th>
                 </tr>
             </table>
@@ -75,7 +75,7 @@
     </tr>
 </table>
 <hr>
-<center><i style="font-size: 12px">Thank you, see you again!</i></center>
+<center><i style="font-size: 12px">Thank you, see you again! ขอบคุณค่ะ</i></center>
 <script>
     //    window.print();
     //    window.close();
