@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('ase64:hPKm7CCT6lq8XQlcDaL21iEn4DLM0G0pVZzs1XI+Hr8='),
 
     'cipher' => 'AES-256-CBC',
 
@@ -123,7 +123,7 @@ return [
     'log' => env('APP_LOG', 'single'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
-
+    'debug' => env('APP_DEBUG', true),
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
