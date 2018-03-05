@@ -1,0 +1,26 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: public
+
+# Ensure we skip ".env", which is only for local development
+skip_files:
+  - .env
+
+env_variables:
+  # Put production environment variables here.
+  APP_LOG: errorlog
+  APP_KEY: base64:nb+mu+GerqUShY2UNGX7WQjQZZLjoqVQGIvXufL0eJo=
+  STORAGE_DIR: /tmp
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+  ## Set these environment variables according to your CloudSQL configuration.
+  DB_HOST: localhost
+  DB_DATABASE: demo
+  DB_USERNAME: root
+  DB_PASSWORD: ''
+  DB_SOCKET: "/cloudsql/eatery-197000:us-central1:pos"
+
+beta_settings:
+      cloud_sql_instances: "eatery-197000:us-central1:pos"

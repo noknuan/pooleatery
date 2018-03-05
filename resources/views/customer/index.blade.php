@@ -12,7 +12,7 @@
                type="text">
 
         <div class="input-group-btn">
-            <button type="button" class="btn btn-default"
+            <button type="button" class="btn btn-warning"
                     onclick="ajaxLoad('{{url('customer')}}?ok=1&search='+$('#search').val())"><i
                         class="glyphicon glyphicon-search"></i>
             </button>

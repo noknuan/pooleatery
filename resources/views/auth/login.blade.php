@@ -13,12 +13,12 @@
 <div class="container-fluid">
     <div class="row-fluid" style="margin-top: 10px">
         <div class="col-md-6 col-md-offset-3" style="padding-top: 1px;padding-bottom: 50px">
-            <h1 class="page-header">POS System Login</h1>
-            <div class="row">
-                <div class="col-sm-5 hidden-xs" style="text-align: center">
+            <h1 class="page-header" font style="color: #761c19 ;background-color: #7eb1ff; padding-left: 150px;padding-right: 30px;padding-bottom: 10px;padding-top: 10px"> POS System Login</h1>
+            <div class="row" >
+                <div class="col-sm-5 hidden-xs" style="text-align: center ; background-color: #2aabd2; padding-top: 56px;padding-bottom: 60px">
                     <img src="{{asset("images/logo.png")}}" width="200" height="100"/>
                 </div>
-                <div class="col-sm-7">
+                <div class="col-sm-7" style="background: #ffea23; padding-top: 20px">
                     {!! Form::open(['url'=>'/login']) !!}
                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                         {!! Form::label("username","Username") !!}
@@ -33,7 +33,7 @@
                     </div>
                     <input type="hidden" name="active" value="1"/>
                     <div class="form-group">
-                        {!! Form::submit("Login",["class"=>"btn btn-primary"]) !!}
+                        {!! Form::submit("Login",["class"=>"btn btn-warning"]) !!}
                     </div>
                     {!! Form::close() !!}
                 </div>

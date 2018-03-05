@@ -12,7 +12,7 @@
                type="text">
 
         <div class="input-group-btn">
-            <button type="button" class="btn btn-default"
+            <button type="button" class="btn btn-warning"
                     onclick="ajaxLoad('{{url('table')}}?ok=1&search='+$('#search').val())"><i
                         class="glyphicon glyphicon-search"></i>
             </button>
@@ -20,7 +20,7 @@
     </div>
 </div>
 <table class="table table-bordered table-striped">
-    <thead>
+    <thead class="bg-dark" style="color: white">
     <tr>
         <th width="50px" style="text-align: center">No</th>
         <th>

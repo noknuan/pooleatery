@@ -18,7 +18,7 @@
                 <tr>
                     <td align="center">{{$product->id}}</td>
                     <td>{{$product->name}}</td>
-                    <td align="right">$ {{$product->unitprice}}</td>
+                    <td align="right">{{$product->unitprice}} บาท</td>
                 </tr>
             @endforeach
         @endforeach

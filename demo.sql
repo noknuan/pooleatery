@@ -1,24 +1,51 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Mar 04, 2018 at 07:16 AM
+-- Server version: 5.7.19
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table customers
+-- Database: `demo`
+--
+CREATE DATABASE IF NOT EXISTS `demo` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `demo`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
 --
 
-DROP TABLE IF EXISTS customers;
-CREATE TABLE IF NOT EXISTS customers (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(100) DEFAULT NULL,
-  discount decimal(10,2) DEFAULT NULL,
-  user_id int(11) DEFAULT NULL,
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  PRIMARY KEY (id)
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE IF NOT EXISTS `customers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `discount` decimal(10,2) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table customers
+-- Dumping data for table `customers`
 --
 
-INSERT INTO customers (id, `name`, discount, user_id, created_at, updated_at) VALUES
+INSERT INTO `customers` (`id`, `name`, `discount`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'Owner', '100.00', 1, '2016-05-30 12:37:03', '2017-02-18 16:11:35'),
 (2, 'VIP', '50.00', 1, '2017-02-18 16:05:34', '2018-03-01 11:03:19'),
 (3, 'Best Customer', '30.00', 1, '2017-02-18 16:05:46', '2018-03-01 11:03:30'),
@@ -27,50 +54,50 @@ INSERT INTO customers (id, `name`, discount, user_id, created_at, updated_at) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table items
+-- Table structure for table `items`
 --
 
-DROP TABLE IF EXISTS items;
-CREATE TABLE IF NOT EXISTS items (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(255) DEFAULT NULL,
-  item_category_id int(11) DEFAULT NULL,
-  unit varchar(255) DEFAULT NULL,
-  quantity float DEFAULT NULL,
-  user_id int(11) DEFAULT NULL,
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  PRIMARY KEY (id)
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE IF NOT EXISTS `items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `item_category_id` int(11) DEFAULT NULL,
+  `unit` varchar(255) DEFAULT NULL,
+  `quantity` float DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table items
+-- Dumping data for table `items`
 --
 
-INSERT INTO items (id, `name`, item_category_id, unit, quantity, user_id, created_at, updated_at) VALUES
+INSERT INTO `items` (`id`, `name`, `item_category_id`, `unit`, `quantity`, `user_id`, `created_at`, `updated_at`) VALUES
 (4, 'សាច់ទា', 1, 'ក្បាល', NULL, 2, '2016-05-30 15:25:22', '2017-11-20 19:45:29'),
 (5, 'សាច់មាន់', 1, 'kg', -0.1, 1, '2016-06-07 10:47:39', '2018-03-03 23:40:29');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table item_categories
+-- Table structure for table `item_categories`
 --
 
-DROP TABLE IF EXISTS item_categories;
-CREATE TABLE IF NOT EXISTS item_categories (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(255) DEFAULT NULL,
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  PRIMARY KEY (id)
+DROP TABLE IF EXISTS `item_categories`;
+CREATE TABLE IF NOT EXISTS `item_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table item_categories
+-- Dumping data for table `item_categories`
 --
 
-INSERT INTO item_categories (id, `name`, created_at, updated_at) VALUES
+INSERT INTO `item_categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Meat', '2015-12-20 20:58:06', '2016-12-26 20:28:00'),
 (2, 'Vegetable', '2015-12-20 20:58:10', '2016-12-26 20:28:07'),
 (3, 'Noodle', '2015-12-20 20:58:20', '2016-06-03 18:38:23');
@@ -78,30 +105,44 @@ INSERT INTO item_categories (id, `name`, created_at, updated_at) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table orders
+-- Table structure for table `migrations`
 --
 
-DROP TABLE IF EXISTS orders;
-CREATE TABLE IF NOT EXISTS orders (
-  id bigint(20) NOT NULL AUTO_INCREMENT,
-  table_id int(11) DEFAULT NULL,
-  status enum('Busy','Printed','Completed') DEFAULT 'Busy',
-  customer_id int(11) DEFAULT NULL,
-  discount int(11) DEFAULT '0',
-  usd decimal(10,2) DEFAULT '0.00',
-  user_id int(11) DEFAULT NULL,
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  checked_in datetime DEFAULT NULL,
-  checked_out datetime DEFAULT NULL,
-  PRIMARY KEY (id)
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE IF NOT EXISTS `orders` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `table_id` int(11) DEFAULT NULL,
+  `status` enum('Busy','Printed','Completed') DEFAULT 'Busy',
+  `customer_id` int(11) DEFAULT NULL,
+  `discount` int(11) DEFAULT '0',
+  `usd` decimal(10,2) DEFAULT '0.00',
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `checked_in` datetime DEFAULT NULL,
+  `checked_out` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table orders
+-- Dumping data for table `orders`
 --
 
-INSERT INTO orders (id, table_id, `status`, customer_id, discount, usd, user_id, created_at, updated_at, checked_in, checked_out) VALUES
+INSERT INTO `orders` (`id`, `table_id`, `status`, `customer_id`, `discount`, `usd`, `user_id`, `created_at`, `updated_at`, `checked_in`, `checked_out`) VALUES
 (6, 11, 'Printed', NULL, 0, '0.00', 3, '2018-02-28 07:33:52', '2018-02-28 07:33:52', NULL, NULL),
 (7, 16, 'Printed', 2, 100, '0.00', 3, '2018-02-28 07:38:22', '2018-02-28 07:38:40', '2018-02-28 07:38:22', NULL),
 (8, 2, 'Printed', NULL, 0, '0.00', 3, '2018-02-28 08:49:58', '2018-02-28 09:21:55', '2018-02-28 08:49:58', '2018-02-28 09:21:55'),
@@ -125,31 +166,31 @@ INSERT INTO orders (id, table_id, `status`, customer_id, discount, usd, user_id,
 -- --------------------------------------------------------
 
 --
--- Table structure for table order_details
+-- Table structure for table `order_details`
 --
 
-DROP TABLE IF EXISTS order_details;
-CREATE TABLE IF NOT EXISTS order_details (
-  id bigint(20) NOT NULL AUTO_INCREMENT,
-  order_id bigint(20) DEFAULT NULL,
-  product_id int(11) DEFAULT NULL,
-  description varchar(500) DEFAULT NULL,
-  quantity float DEFAULT NULL,
-  price decimal(10,2) DEFAULT NULL,
-  ordered_date datetime DEFAULT NULL,
-  discount int(11) DEFAULT '0',
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  deleted_at datetime DEFAULT NULL,
-  user_id int(11) DEFAULT NULL,
-  PRIMARY KEY (id)
+DROP TABLE IF EXISTS `order_details`;
+CREATE TABLE IF NOT EXISTS `order_details` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  `quantity` float DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `ordered_date` datetime DEFAULT NULL,
+  `discount` int(11) DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table order_details
+-- Dumping data for table `order_details`
 --
 
-INSERT INTO order_details (id, order_id, product_id, description, quantity, price, ordered_date, discount, created_at, updated_at, deleted_at, user_id) VALUES
+INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `description`, `quantity`, `price`, `ordered_date`, `discount`, `created_at`, `updated_at`, `deleted_at`, `user_id`) VALUES
 (3, 6, 197, 'Americano', 1, '3.50', '2018-02-28 07:29:34', 0, '2018-02-28 07:29:34', '2018-02-28 07:33:52', NULL, 3),
 (4, 7, 197, 'Americano', 1, '3.50', '2018-02-28 07:38:22', 0, '2018-02-28 07:38:22', '2018-02-28 07:38:22', NULL, 3),
 (5, 7, 1041, 'Caramel Frappe', 1, '3.50', '2018-02-28 07:38:22', 0, '2018-02-28 07:40:50', '2018-02-28 07:40:50', NULL, 3),
@@ -201,28 +242,28 @@ INSERT INTO order_details (id, order_id, product_id, description, quantity, pric
 -- --------------------------------------------------------
 
 --
--- Table structure for table products
+-- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS products;
-CREATE TABLE IF NOT EXISTS products (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(500) DEFAULT NULL,
-  product_category_id int(11) DEFAULT NULL,
-  product_type_id int(11) DEFAULT NULL,
-  unitprice decimal(10,2) DEFAULT '0.00',
-  image varchar(255) DEFAULT NULL,
-  user_id int(11) DEFAULT NULL,
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  PRIMARY KEY (id)
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(500) DEFAULT NULL,
+  `product_category_id` int(11) DEFAULT NULL,
+  `product_type_id` int(11) DEFAULT NULL,
+  `unitprice` decimal(10,2) DEFAULT '0.00',
+  `image` varchar(255) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table products
+-- Dumping data for table `products`
 --
 
-INSERT INTO products (id, `name`, product_category_id, product_type_id, unitprice, image, user_id, created_at, updated_at) VALUES
+INSERT INTO `products` (`id`, `name`, `product_category_id`, `product_type_id`, `unitprice`, `image`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'Spring Roll', 1, NULL, '35.00', NULL, 1, '2018-03-01 05:41:20', '2018-03-01 05:41:20'),
 (2, 'ข้าวเกรียบทอด', 1, NULL, '35.00', NULL, 1, '2018-03-01 05:42:11', '2018-03-01 05:42:11'),
 (3, 'ยำวุ้นเส้น', 1, NULL, '60.00', NULL, 1, '2018-03-01 05:42:33', '2018-03-01 05:42:33'),
@@ -241,24 +282,24 @@ INSERT INTO products (id, `name`, product_category_id, product_type_id, unitpric
 -- --------------------------------------------------------
 
 --
--- Table structure for table product_categories
+-- Table structure for table `product_categories`
 --
 
-DROP TABLE IF EXISTS product_categories;
-CREATE TABLE IF NOT EXISTS product_categories (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(500) DEFAULT NULL,
-  ordering int(11) DEFAULT '0',
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  PRIMARY KEY (id)
+DROP TABLE IF EXISTS `product_categories`;
+CREATE TABLE IF NOT EXISTS `product_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(500) DEFAULT NULL,
+  `ordering` int(11) DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table product_categories
+-- Dumping data for table `product_categories`
 --
 
-INSERT INTO product_categories (id, `name`, ordering, created_at, updated_at) VALUES
+INSERT INTO `product_categories` (`id`, `name`, `ordering`, `created_at`, `updated_at`) VALUES
 (1, 'Appetizer', 1, '2018-03-01 05:38:10', '2018-03-01 05:38:10'),
 (2, 'Drink', 2, '2018-03-01 05:38:31', '2018-03-01 05:38:31'),
 (3, 'Coffee&Tea', 3, '2018-03-01 05:38:59', '2018-03-01 05:38:59'),
@@ -271,26 +312,26 @@ INSERT INTO product_categories (id, `name`, ordering, created_at, updated_at) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table recipes
+-- Table structure for table `recipes`
 --
 
-DROP TABLE IF EXISTS recipes;
-CREATE TABLE IF NOT EXISTS recipes (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  product_id int(11) DEFAULT NULL,
-  item_id int(11) DEFAULT NULL,
-  quantity decimal(10,2) DEFAULT '0.00',
-  user_id int(11) DEFAULT NULL,
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  PRIMARY KEY (id)
+DROP TABLE IF EXISTS `recipes`;
+CREATE TABLE IF NOT EXISTS `recipes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) DEFAULT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `quantity` decimal(10,2) DEFAULT '0.00',
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table recipes
+-- Dumping data for table `recipes`
 --
 
-INSERT INTO recipes (id, product_id, item_id, quantity, user_id, created_at, updated_at) VALUES
+INSERT INTO `recipes` (`id`, `product_id`, `item_id`, `quantity`, `user_id`, `created_at`, `updated_at`) VALUES
 (10, 14, 3, '0.10', 1, '2016-09-11 10:24:38', '2016-09-11 10:24:38'),
 (11, 12, 5, '0.20', 1, '2016-09-11 10:24:55', '2016-09-11 10:24:55'),
 (13, 1, 5, '0.10', 1, '2016-09-11 10:25:33', '2016-09-11 10:25:33'),
@@ -302,21 +343,21 @@ INSERT INTO recipes (id, product_id, item_id, quantity, user_id, created_at, upd
 -- Table structure for table `tables`
 --
 
-DROP TABLE IF EXISTS tables;
+DROP TABLE IF EXISTS `tables`;
 CREATE TABLE IF NOT EXISTS `tables` (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(50) DEFAULT NULL,
-  status enum('Free','Busy','Printed') DEFAULT 'Free',
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  PRIMARY KEY (id)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `status` enum('Free','Busy','Printed') DEFAULT 'Free',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tables`
 --
 
-INSERT INTO `tables` (id, `name`, `status`, created_at, updated_at) VALUES
+INSERT INTO `tables` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
 (2, '1', 'Free', NULL, '2018-03-03 23:40:29'),
 (3, '2', 'Free', NULL, '2018-03-02 05:11:26'),
 (4, '3', 'Free', NULL, '2017-04-09 07:57:46'),
@@ -339,28 +380,28 @@ INSERT INTO `tables` (id, `name`, `status`, created_at, updated_at) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table users
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS users;
-CREATE TABLE IF NOT EXISTS users (
-  id int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  username varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  password varchar(60) COLLATE utf8_unicode_ci NOT NULL,
-  remember_token varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  role enum('SuperAdmin','Admin','Cashier') COLLATE utf8_unicode_ci DEFAULT NULL,
-  active tinyint(1) DEFAULT '0',
-  created_at datetime DEFAULT NULL,
-  updated_at datetime DEFAULT NULL,
-  PRIMARY KEY (id)
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `role` enum('SuperAdmin','Admin','Cashier') COLLATE utf8_unicode_ci DEFAULT NULL,
+  `active` tinyint(1) DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table users
+-- Dumping data for table `users`
 --
 
-INSERT INTO users (id, username, `password`, remember_token, role, active, created_at, updated_at) VALUES
-(1, 'super', '$2y$10$Zy1XTuyhK3zxTdkkmFicmOXpIEtRpwzoNTZPuna/L9i08C/Bp8aCC', 'axPT2eGdGLjjbNwbLF9iNutjZ1FIEeIITqIYnSTYa8EV455qZ87iLKYrjgs2', 'SuperAdmin', 1, '2016-03-03 10:18:30', '2017-11-22 13:39:52'),
+INSERT INTO `users` (`id`, `username`, `password`, `remember_token`, `role`, `active`, `created_at`, `updated_at`) VALUES
+(1, 'super', '$2y$10$Zy1XTuyhK3zxTdkkmFicmOXpIEtRpwzoNTZPuna/L9i08C/Bp8aCC', '1HZ5SzI5FtqWQkWUg88Ap6qmZOlFrrd73vOC0qSbahzerUIl4JAMCbID5YPs', 'SuperAdmin', 1, '2016-03-03 10:18:30', '2017-11-22 13:39:52'),
 (2, 'admin', '$2y$10$OzvezM1JTpSyLjBnuxueg.NC9yDNovAGWSi1FFw6yZczE5y6tMpfO', 'hjCjjDeREQf1sc6DH4G6i8CDnOqB8BURraqoiUWXoO7HEk9bKC5MXH4pLRk7', 'Admin', 1, '2016-06-04 11:24:02', '2017-11-24 00:43:43'),
 (3, 'cashier', '$2y$10$RGlUQWowwJ8ZCNcll9ByN.rvjp2ZN7HRMonM6wrF5T2ubIXLK8Sh.', 'FnN32C5uG7WCOZCmjOKFudvqkVrUBptNHlZT6HODqcknYUSESTCeCJhrEsmt', 'Cashier', 1, '2016-06-04 11:24:02', '2017-11-24 00:43:51');
 COMMIT;
