@@ -27,7 +27,7 @@ USE `demo`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- table structure for table `customers`
 --
 
 DROP TABLE IF EXISTS `customers`;
@@ -54,7 +54,7 @@ INSERT INTO `customers` (`id`, `name`, `discount`, `user_id`, `created_at`, `upd
 -- --------------------------------------------------------
 
 --
--- Table structure for table `items`
+-- table structure for table `items`
 --
 
 DROP TABLE IF EXISTS `items`;
@@ -81,7 +81,7 @@ INSERT INTO `items` (`id`, `name`, `item_category_id`, `unit`, `quantity`, `user
 -- --------------------------------------------------------
 
 --
--- Table structure for table `item_categories`
+-- table structure for table `item_categories`
 --
 
 DROP TABLE IF EXISTS `item_categories`;
@@ -105,7 +105,7 @@ INSERT INTO `item_categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- table structure for table `migrations`
 --
 
 DROP TABLE IF EXISTS `migrations`;
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- table structure for table `orders`
 --
 
 DROP TABLE IF EXISTS `orders`;
@@ -166,7 +166,7 @@ INSERT INTO `orders` (`id`, `table_id`, `status`, `customer_id`, `discount`, `us
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_details`
+-- table structure for table `order_details`
 --
 
 DROP TABLE IF EXISTS `order_details`;
@@ -242,7 +242,7 @@ INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `description`, `qua
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- table structure for table `products`
 --
 
 DROP TABLE IF EXISTS `products`;
@@ -282,7 +282,7 @@ INSERT INTO `products` (`id`, `name`, `product_category_id`, `product_type_id`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_categories`
+-- table structure for table `product_categories`
 --
 
 DROP TABLE IF EXISTS `product_categories`;
@@ -312,7 +312,7 @@ INSERT INTO `product_categories` (`id`, `name`, `ordering`, `created_at`, `updat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `recipes`
+-- table structure for table `recipes`
 --
 
 DROP TABLE IF EXISTS `recipes`;
@@ -340,7 +340,7 @@ INSERT INTO `recipes` (`id`, `product_id`, `item_id`, `quantity`, `user_id`, `cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tables`
+-- table structure for table `tables`
 --
 
 DROP TABLE IF EXISTS `tables`;
@@ -380,7 +380,7 @@ INSERT INTO `tables` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;

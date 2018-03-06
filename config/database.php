@@ -82,7 +82,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Migration Repository Table
+    | Migration Repository table
     |--------------------------------------------------------------------------
     |
     | This table keeps track of all the migrations that have already run for

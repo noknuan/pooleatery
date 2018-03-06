@@ -6,7 +6,7 @@
 <div class="row" style="padding-left: 20px">
     <a title="Table" class="btn btn-default pay" data-toggle="modal" data-target="#modal"
        href="cashier/table">
-        <b id="table_id">{{Session::has('table_id')?\App\Table::find(Session::get('table_id'))->name:'Table #'}}</b>
+        <b id="table_id">{{Session::has('table_id')?\App\Table::find(Session::get('table_id'))->name:'table'}}</b>
     </a>
 
     <a class="btn btn-primary pay" data-toggle="modal"
