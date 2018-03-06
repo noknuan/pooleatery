@@ -4,7 +4,7 @@
 @else
     {!! Form::open(["id"=>"frm","class"=>"form-horizontal"]) !!}
 @endif
-<div class="form-group row required" id="form-name-error">
+<div class="form-group required" id="form-name-error">
     {!! Form::label("name","Name",["class"=>"control-label col-md-2"]) !!}
     <div class="col-md-5">
         {!! Form::text("name",null,["class"=>"form-control required","id"=>"focus"]) !!}

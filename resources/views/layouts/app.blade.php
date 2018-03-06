@@ -55,7 +55,7 @@
                     <li class="nav_home">
                         <a href="#home"><i class="glyphicon glyphicon-dashboard"></i> Sale Summary</a>
                     </li>
-                    <li><a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-th"></i> Master Table</a>
+                    <li><a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-th"></i> Master data</a>
                         <ul class="nav" id="sidebar">
                             <li class="nav_table"><a href="#table"> Table</a></li>
                             <li class="nav_customer"><a href="#customer"> Customer</a></li>
@@ -63,7 +63,7 @@
                     </li>
 
                     <li>
-                        <a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-th"></i> Product </a>
+                        <a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-th"></i> Product</a>
                         <ul class="nav" id="sidebar">
                             <li class="nav_product">
                                 <a href="#product">Product List</a>
@@ -99,7 +99,7 @@
             </div>
 
         </div>
-        <div class="col-sm-8 col-md-9" style="background: #a1a19a;padding-top: 1px;padding-bottom: 50px" id="content">
+        <div class="col-sm-8 col-md-9" style="background: #e6e7e3;padding-top: 1px;padding-bottom: 50px" id="content">
         </div>
     </div>
 </div>
