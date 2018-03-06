@@ -48,7 +48,7 @@ class CashierController extends Controller
         $products = $products->orderBy('name')->get();
         foreach ($products as $menu) {
             $str .= '<li class="list-group-item" style="font-size: 16px;padding:0px;height: 80px"
-            onclick="if($(\'#table_id\').text()==\'table #\') alert(\'Please select table first\'); else ajaxLoad(\'cashier/order/' . $menu->id . '\',\'orderList\');">
+            onclick="if($(\'#table_id\').text()==\'Table #\') alert(\'Please select table first\'); else ajaxLoad(\'cashier/order/' . $menu->id . '\',\'orderList\');">
             <img src=' . ($menu->image != '' && File::exists("images/products/" . $menu->image) ? "/images/products/" . $menu->image : "/images/default.jpg") . ' class="pull-left" width="80px" height="70px"
                                  style="margin: 5px 5px 0px 5px"/>
                             <div style="margin:20px">
