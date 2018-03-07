@@ -16,7 +16,7 @@
 
     <a style="@if(Session::get('table_id')=='' || count($order)==0) pointer-events: none @endif"
        href="{{url("cashier/print")}}"
-       target="_blank" class="btn btn-danger pay">
+       target="_blank" class="btn btn-primary pay">
         Print
     </a>
     <a class="btn btn-warning pay" data-toggle="modal" data-target="#modal_pay" href="cashier/pay"
