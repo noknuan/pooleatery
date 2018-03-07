@@ -26,16 +26,16 @@
     font-size: 20px;
     float: left;
     position: relative;
-    width: 45%;
+    width: 40%;
     margin-bottom: 0px;
     cursor: pointer;
     border-radius: 4px;
-    border: 2px outset darkgrey;
+    border: 2px outset #370fa9;
 }
 
 .active {
-    color: #ff0921;
-    border: 2px outset #ff204e;
+    color: #010203;
+    border: 2px outset #ff0921;
 }
 
 .tbl {
