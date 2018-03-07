@@ -19,7 +19,6 @@
     </div>
 </div>
 <div class="modal fade " id="modal_open" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal"
-     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content container-fluid">
         </div>

@@ -16,7 +16,7 @@
 
     <a style="@if(Session::get('table_id')=='' || count($order)==0) pointer-events: none @endif"
        href="{{url("cashier/print")}}"
-       target="_blank" class="btn btn-primary pay">
+       target="_blank" class="btn btn-warning pay">
         Print
     </a>
     <a class="btn btn-warning pay" data-toggle="modal" data-target="#modal_pay" href="cashier/pay"
@@ -29,7 +29,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th style="margin: 0px;padding: 0px;vertical-align: middle" width="1px"></th>
+
             <th>Description</th>
             <th style="text-align: center">Qty</th>
             <th style="text-align: right; width: 30%">Price</th>
@@ -42,10 +42,7 @@
             <tbody>
             @foreach($order->order_details()->orderBy('description')->get() as $orderDetail)
                 <tr style="color: darkblue;@if(($orderDetail->status=='Filled')) color: red; @endif @if(!empty($orderDetail->deleted_at)) text-decoration: line-through; @endif">
-                    <td style="margin: 0px;padding: 0px;vertical-align: middle">
-                        <input type="checkbox" style="width: 18px;height: 18px" value="{{$orderDetail->id}}"
-                               class="idRow"/>
-                    </td>
+
                     <td style="@if($orderDetail->sent==1) color:red; @endif">
                         <input onchange="ajaxLoad('cashier/update-description/{{$orderDetail->id}}/'+this.value,'orderList')"
                                type="text" style="width: 100%;border: none;height: 30px"
