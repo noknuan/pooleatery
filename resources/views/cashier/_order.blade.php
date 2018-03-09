@@ -4,24 +4,24 @@
     }
 </style>
 <div class="row" style="padding-left: 20px">
-    <a title="Table" class="btn btn-default pay" data-toggle="modal" data-target="#modal"
+    <a title="Table" class="btn btn-success pay" data-toggle="modal" data-target="#modal"
        href="cashier/table">
-        <b id="table_id">{{Session::has('table_id')?\App\Table::find(Session::get('table_id'))->name:'Table #'}}</b>
+        <i class="glyphicon glyphicon-cutlery"></i> <b id="table_id">{{Session::has('table_id')?\App\Table::find(Session::get('table_id'))->name:'Table #'}}</b>
     </a>
 
     <a class="btn btn-primary pay" data-toggle="modal"
        data-target="#modal_open" href="cashier/open">
-        Open New Order
+       <i class="glyphicon glyphicon-plus-sign"></i> New Order
     </a>
 
     <a style="@if(Session::get('table_id')=='' || count($order)==0) pointer-events: none @endif"
        href="{{url("cashier/print")}}"
-       target="_blank" class="btn btn-warning pay">
-        Print
+       target="_blank" class="btn btn-info pay">
+        <i class="glyphicon glyphicon-print"></i> Print
     </a>
     <a class="btn btn-warning pay" data-toggle="modal" data-target="#modal_pay" href="cashier/pay"
        style="@if(Session::get('table_id')=='' || count($order)==0) pointer-events: none @endif">
-        Pay
+        <i class ="glyphicon glyphicon-shopping-cart"></i> Pay
     </a>
 </div>
 <br>
