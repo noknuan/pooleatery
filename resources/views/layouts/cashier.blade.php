@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Pool Eatery</title>
+    <title>Restaurant Management System</title>
     <!-- Styles -->
     <link href="{{ asset('bootstrap-3.3.7/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -19,6 +19,7 @@
     </div>
 </div>
 <div class="modal fade " id="modal_open" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal"
+     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content container-fluid">
         </div>
@@ -34,13 +35,13 @@
 <div class="container-fluid" style="background: #ffffff;border-bottom: 5px solid #c4c4bf">
     <img src="/images/logo.png" height="80px" width="170px"/>
     <div class="pull-right" style="padding-top: 10px;font-size: 16px">
-        Hi, {{ucwords(Auth::user()->username)}}  <a href="{{url('/logout')}}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();"><br><i class="glyphicon glyphicon-log-out"></i>Logout</a>
+        Hi, {{ucwords(Auth::user()->username)}} ( <a href="{{url('/logout')}}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">Logout</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST"
               style="display: none;">
             {{ csrf_field() }}
         </form>
-
+        )
     </div>
 </div>
 @yield('content')
