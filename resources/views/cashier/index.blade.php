@@ -4,7 +4,7 @@
     <div class="container" style="margin-top: 10px">
         <div class="col-md-4" style="padding: 1%">
             @foreach($menuCategories as $menuCategory)
-                <div class="menu" @if($menuCategory->id==(Session::has('menuCategory_id')?Session::get('menuCategory_id'):env('DEFAULT_MENU_CATEGORY'))) active  @endif"
+               <div class="menu" @if($menuCategory->id==(Session::has('menuCategory_id')?Session::get('menuCategory_id'):env('DEFAULT_MENU_CATEGORY'))) active  @endif"
                      onclick="$('.menu').removeClass('active');$(this).addClass('active');ajaxLoad('cashier/products?menuCategory_id={{$menuCategory->id}}','productList')">{{$menuCategory->name}}
                 </div>
             @endforeach

@@ -24,10 +24,10 @@
     </a>
 </div>
 <br>
-<div class="row" style="background: white;padding: 10px 10px 30px 10px">
+<div class="row" style="background: #dfe7e7;padding: 10px 10px 30px 10px">
     <table class="table">
         <thead>
-        <tr>
+        <tr bgcolor="#faebd7">
 
             <th>Description</th>
             <th style="text-align: center">Qty</th>

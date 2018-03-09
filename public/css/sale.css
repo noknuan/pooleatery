@@ -16,7 +16,8 @@
 }
 
 .menu {
-    background: #2dcbeb;
+    /*background: #2dcbeb;*/
+    background-image: url("../images/food2.jpg");
     color: white;
     margin: 10px;
     margin-left: 0px;
@@ -30,7 +31,7 @@
     margin-bottom: 0px;
     cursor: pointer;
     border-radius: 4px;
-    border: 2px outset #370fa9;
+    border: 2px outset #010203;
 }
 
 .active {
