@@ -23,7 +23,7 @@
 </head>
 <body style="background:#787c62">
 <div class="pull-right" style="padding-top: 10px;font-size: 16px">
-    Hi, {{ucwords(Auth::user()->username)}}  <a href="{{url('/logout')}}" onclick="event.preventDefault();
+    <br>Hi, {{ucwords(Auth::user()->username)}}  <a href="{{url('/logout')}}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();"><br><i class="glyphicon glyphicon-log-out"></i>Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST"
           style="display: none;">
