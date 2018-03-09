@@ -34,13 +34,13 @@
 <div class="container-fluid" style="background: #ffffff;border-bottom: 5px solid #c4c4bf">
     <img src="/images/logo.png" height="80px" width="170px"/>
     <div class="pull-right" style="padding-top: 10px;font-size: 16px">
-        Hi, {{ucwords(Auth::user()->username)}} ( <a href="{{url('/logout')}}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">Logout</a>
+        Hi, {{ucwords(Auth::user()->username)}}  <a href="{{url('/logout')}}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();"><br><i class="glyphicon glyphicon-log-out"></i>Logout</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST"
               style="display: none;">
             {{ csrf_field() }}
         </form>
-        )
+
     </div>
 </div>
 @yield('content')

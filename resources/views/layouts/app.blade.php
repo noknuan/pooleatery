@@ -23,13 +23,13 @@
 </head>
 <body style="background:#787c62">
 <div class="pull-right" style="padding-top: 10px;font-size: 16px">
-    Hi, {{ucwords(Auth::user()->username)}} ( <a href="{{url('/logout')}}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">Logout</a>
+    Hi, {{ucwords(Auth::user()->username)}}  <a href="{{url('/logout')}}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();"><br><i class="glyphicon glyphicon-log-out"></i>Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST"
           style="display: none;">
         {{ csrf_field() }}
     </form>
-    )
+
 </div>
 <div class="container-fluid" style="background: #ffffff;border-bottom: 5px solid #c4c4bf">
     <img src="{{asset('images/logo.png')}}" height="80px" width="170px"/>
@@ -53,34 +53,34 @@
             </div>
                 <ul class="nav nav-stacked" id="sidebar" style="margin-bottom: 100px">
                     <li class="nav_home">
-                        <a href="#home"><i class="glyphicon glyphicon-dashboard"></i> Sale Summary</a>
+                        <a href="#home"><i class="glyphicon glyphicon-home"></i> Sale Summary</a>
                     </li>
-                    <li><a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-th"></i> Master Data</a>
+                    <li><a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-tags"></i> Master Data</a>
                         <ul class="nav" id="sidebar">
-                            <li class="nav_table"><a href="#table"> Table</a></li>
-                            <li class="nav_customer"><a href="#customer"> Customer</a></li>
+                            <li class="nav_table"><a href="#table"><i class="glyphicon glyphicon-edit"></i> Table</a></li>
+                            <li class="nav_customer"><a href="#customer"><i class="glyphicon glyphicon-edit"></i> Customer</a></li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-th"></i> Product</a>
+                        <a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-tags"></i> Product</a>
                         <ul class="nav" id="sidebar">
                             <li class="nav_product">
-                                <a href="#product">Product List</a>
+                                <a href="#product"><i class="glyphicon glyphicon-edit"></i> Product List</a>
                             </li>
                             <li class="nav_product_category">
-                                <a href="#product_category">Product Category</a>
+                                <a href="#product_category"><i class="glyphicon glyphicon-edit"></i> Product Category</a>
                             </li>
 
                         </ul>
                     </li>
                     <li>
-                        <a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-search"></i>
+                        <a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-list-alt"></i>
                             Report</a>
                         <ul class="nav" id="sidebar">
 
                             <li class="nav_report_daily-summary">
-                                <a href="#report/daily-summary">Daily Summary Report</a>
+                                <a href="#report/daily-summary"><i class="glyphicon glyphicon-edit"></i> Daily Summary Report</a>
                             </li>
 
                         </ul>
@@ -90,7 +90,7 @@
                                         class="glyphicon glyphicon-user"></i> User Management</a></li>
                     @endif
                     <li class="nav_change-password"><a href="#change-password"><i
-                                    class="glyphicon glyphicon-lock"></i>
+                                    class="glyphicon glyphicon-wrench"></i>
                             Change
                             Password</a>
                     </li>
