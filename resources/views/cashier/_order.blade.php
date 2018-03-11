@@ -19,7 +19,7 @@
         <i class="glyphicon glyphicon-print"></i> Print
     </a>
     <a class="btn btn-warning pay" data-toggle="modal" data-target="#modal_pay" href="cashier/pay"
-       style="@if(Session::get('table_id')=='' || count($order)==0) pointer-events: none @endif">
+       style="@if(Session::get('table_id')=='' || count($order)==0)  pointer-events: none @endif">
         <i class ="glyphicon glyphicon-shopping-cart"></i> Pay
     </a>
 </div>
