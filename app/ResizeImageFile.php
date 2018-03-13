@@ -5,7 +5,7 @@
  * Date: 3/16/2016
  * Time: 10:17 AM
  */
-namespace App\Lib;
+namespace App;
 Class ResizeImageFile
 {
     // *** Class variables

@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Lib\ResizeImageFile;
+use App\ResizeImageFile;
 use App\Product;
 use App\ProductCategory;
 use Illuminate\Http\Request;
