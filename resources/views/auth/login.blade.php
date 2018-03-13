@@ -8,12 +8,13 @@
     <!-- Styles -->
     <link href="{{ asset('bootstrap-3.3.7/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bootstrap-3.3.7/css/bootstrap-theme.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row-fluid" style="margin-top: 10px">
-        <div class="col-md-6 col-md-offset-3" style="padding-top: 10px;padding-bottom: 80px ; background-color: #7eb1ff">
-            <h1 class="page-header" font style="color: #761c19 ;background-color: #7eb1ff; padding-left: 150px;padding-right: 30px;padding-bottom: 10px;padding-top: 10px"><i class="glyphicon glyphicon-log-in"></i> POS System Login</h1>
+    <div class="row-fluid" style="margin-top: 5px">
+        <div class="col-md-6 col-md-offset-3" style="padding-top: 100px;padding-bottom: 15px ">
+
             <div class="row" >
                 <div class="col-sm-5 hidden-xs" style="text-align: center ; background-color: #2aabd2; padding-top: 56px;padding-bottom: 70px">
                     <img src="{{asset("images/logo.png")}}" width="200" height="100"/>
