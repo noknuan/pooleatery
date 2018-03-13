@@ -18,7 +18,7 @@
 .menu {
     /*background: #2dcbeb;*/
     background-image: url("../images/food2.jpg");
-    color: white;
+    color: #010203;
     margin: 10px;
     margin-left: 0px;
     text-align: center;
@@ -31,12 +31,12 @@
     margin-bottom: 0px;
     cursor: pointer;
     border-radius: 4px;
-    border: 2px outset #010203;
+    border: 2px outset #545146;
 }
 
 .active {
-    color: #010203;
-    border: 2px outset #ff0921;
+    color: #9f9f9a;
+    border: 2px outset #370fa9;
 }
 
 .tbl {
@@ -132,4 +132,7 @@ span.symbol {
     -ms-user-select: none;
     user-select: none;
     -o-user-select: none;
+}
+body {  background-image: url("../images/cashier.jpg");
+    background-repeat: round;
 }

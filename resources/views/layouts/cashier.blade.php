@@ -10,7 +10,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sale.css') }}" rel="stylesheet">
 </head>
-<body style="background: grey">
+<body>
 <div class="modal fade " id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
      aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -31,7 +31,9 @@
         <div class="modal-content container-fluid">
         </div>
     </div>
+
 </div>
+
 <div class="container-fluid" style="background: #ffffff;border-bottom: 5px solid #c4c4bf">
     <img src="/images/logo.png" height="80px" width="170px"/>
     <div class="pull-right" style="padding-top: 10px;font-size: 16px">
@@ -43,8 +45,11 @@
         </form>
 
     </div>
+
 </div>
+
 @yield('content')
+
 <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
 <script src="{{ asset('bootstrap-3.3.7/js/bootstrap.min.js') }}"></script>
 <script>
@@ -90,5 +95,7 @@
         });
     }
 </script>
+
 </body>
+
 </html>
