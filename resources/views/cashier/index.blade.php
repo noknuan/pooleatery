@@ -34,8 +34,12 @@
                 </ul>
             </div>
         </div>
-    <div class="col-md-4" id="orderList" style="padding: 1%">
+    <div class="col-md-4" id="orderList" style="padding: 1px 1px 1px 1px">
         @include('cashier._order')
+    </div>
+
+    <div class="alert alert-warning" style="padding: 1px 1px 1px 1px">
+        <strong>Warning!</strong> Please Turn On Pop up Blocker on Browser.
     </div>
     </div>
 @endsection
