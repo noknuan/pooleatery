@@ -18,8 +18,10 @@
             <div class="row" >
                 <div class="col-sm-5 hidden-xs" style="text-align: center ; background-color: #2aabd2; padding-top: 56px;padding-bottom: 70px">
                     <img src="{{asset("images/logo.png")}}" width="200" height="100"/>
+                    <h4>POS System Login</h4>
                 </div>
-                <div class="col-sm-7" style="background: #ffea23; padding-top: 29px">
+
+                <div class="col-sm-7" style="background: #ffea23; padding-top: 50px ;padding-bottom: 20px">
                     {!! Form::open(['url'=>'/login']) !!}
                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                         {!! Form::label("username","Username") !!}
