@@ -31,3 +31,6 @@
     background-color: #efe20b;
     border-radius: 0px;
 }
+body {  background-image: url("../images/background.jpg");
+    background-repeat: round;
+}

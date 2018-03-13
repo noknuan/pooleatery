@@ -21,7 +21,7 @@
         }
     </style>
 </head>
-<body style="background:#787c62">
+<body>
 <div class="pull-right" style="padding-top: 10px; padding-right: 10px;font-size: 16px">
    <br> Hi, {{ucwords(Auth::user()->username)}}  <a href="{{url('/logout')}}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();"><br><i class="glyphicon glyphicon-log-out"></i>Logout</a>
