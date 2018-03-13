@@ -36,7 +36,9 @@
         </div>
     <div class="col-md-4" id="orderList" style="padding: 1px 1px 1px 1px">
         @include('cashier._order')
+        
     </div>
+
     </div>
 
 @endsection

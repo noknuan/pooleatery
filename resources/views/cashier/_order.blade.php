@@ -25,6 +25,10 @@
 </div>
 <br>
 <div class="row" style="background: #dfe7e7;padding: 10px 10px 30px 10px">
+
+    <div class="alert alert-warning" style="padding: 1px 1px 1px 1px">
+        <strong>Warning!</strong> Please Turn On Pop up Blocker on Browser.
+    </div>
     <table class="table">
         <thead>
         <tr bgcolor="#faebd7">
