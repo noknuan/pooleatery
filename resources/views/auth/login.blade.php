@@ -21,7 +21,7 @@
                     <h4>POS System Login</h4>
                 </div>
 
-                <div class="col-sm-7" style="background: #ffea23; padding-top: 50px ;padding-bottom: 20px">
+                <div class="col-sm-7" style="background: #ffea23; padding-top: 50px ;padding-bottom: 19px">
                     {!! Form::open(['url'=>'/login']) !!}
                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                         {!! Form::label("username","Username") !!}
