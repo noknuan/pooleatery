@@ -9,7 +9,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="col-md-4" style="padding: 20px 10px 30px 10px">
+        <div class="col-md-4">
             <input type="text" class="form-control" placeholder="Search..."
                    style="border: 2px solid whitesmoke;height: 40px;border-radius: 0px;background: lightyellow;font-size: 16px"
                    onfocus="$(this).select()"

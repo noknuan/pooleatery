@@ -35,7 +35,7 @@
     <img src="{{asset('images/logo.png')}}" height="80px" width="170px"/>
     <button class="navbar-toggle collapsed" data-toggle="collapse"
             data-target="#menu" aria-expanded="false">
-        <i style="color: darkgrey" class="glyphicon glyphicon-menu-hamburger"></i> Menu
+        <i style="color: darkgrey" class="glyphicon glyphicon-menu-down"></i> Menu
     </button>
 </div>
 <div class="container-fluid" style="padding-bottom: 160px">
