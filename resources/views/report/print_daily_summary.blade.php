@@ -5,7 +5,7 @@
 </center>
 <hr style="size:2px;border:inset">
 <h2 style="text-align: center;padding: 10px;background: whitesmoke">
-    $ {{number_format($orders['Total']['total'],2)}}</h2>
+     {{number_format($orders['Total']['total'],2)}} บาท</h2>
 <table style="width:100%;margin-top:10px" border="1px solid" cellspacing="0" cellpadding="5px">
     <tr style="font-size:14px">
         <th>Category</th>
@@ -29,7 +29,7 @@
         @if($key!='Total')
             <tr style="font-size: 14px">
                 <td>{{$key}}</td>
-                <td align="right">$ {{number_format($value['total'],2)}}</td>
+                <td align="right">{{number_format($value['total'],2)}} บาท</td>
             </tr>
         @endif
     @endforeach
