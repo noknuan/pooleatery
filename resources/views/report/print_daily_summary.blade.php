@@ -15,7 +15,7 @@
         @if($key!='Total')
             <tr style="font-size: 14px">
                 <td>{{$key}}</td>
-                <td align="right">$ {{number_format($value['total'],2)}}</td>
+                <td align="right">{{number_format($value['total'],2)}} บาท</td>
             </tr>
         @endif
     @endforeach
