@@ -14,7 +14,7 @@
            class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> Print</a>
     </div>
 </div>
-<h2 style="text-align: center;padding: 10px;background: whitesmoke">
+<h2 style="text-align: center;padding: 10px;background: #b0dfe7">
      {{number_format($orders['Total']['total'],2)}} บาท</h2>
 <div class="row">
     <div class="col-md-6">
