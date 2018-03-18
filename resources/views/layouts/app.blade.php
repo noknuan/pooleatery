@@ -75,7 +75,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-ok-circle"></i>
+                        <a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-signal"></i>
                             Report</a>
                         <ul class="nav" id="sidebar">
 
