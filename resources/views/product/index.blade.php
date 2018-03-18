@@ -1,8 +1,8 @@
 <h1 class="page-header">Product
     <div class="pull-right">
-        <a href="javascript:ajaxLoad('product/create')" class="btn btn-primary"><i
+        <a href="javascript:ajaxLoad('product/create')" class="btn btn-success"><i
                     class="glyphicon glyphicon-plus-sign"></i> New</a>
-        <a href="{{url('product/print')}}" target="_blank" class="btn btn-success"><i
+        <a href="{{url('product/print')}}" target="_blank" class="btn btn-primary"><i
                     class="glyphicon glyphicon-print"></i> Print</a>
     </div>
 </h1>
@@ -26,7 +26,7 @@
 </div>
 <table class="table table-bordered table-striped">
     <thead>
-    <tr>
+    <tr bgcolor="#a9a9a9">
         <th class="hidden-xs hidden-sm" style="text-align: center">Picture</th>
         <th width="80px" style="text-align: center">
             <a href="javascript:ajaxLoad('product?field=id&sort={{Session::get("product_sort")=="asc"?"desc":"asc"}}')">
@@ -52,7 +52,7 @@
     <tbody>
     <?php $i = 1;?>
     @foreach($products as $key=>$product)
-        <tr>
+        <tr bgcolor="#fffacd">
             <td class="hidden-xs hidden-sm" style="text-align: center">
                 <img src="{{$product->image!='' && File::exists('images/products/'.$product->image)?'/images/products/'.$product->image:'/images/default.jpg'}}"
                      width="80px" height="70px"/>
@@ -63,7 +63,7 @@
                 style="vertical-align: middle">{{$product->product_category?$product->product_category->name:''}}</td>
             <td align="right" style="vertical-align: middle">  {{$product->unitprice}}</td>
             <td style="text-align: center;vertical-align: middle">
-                <a class="btn btn-primary btn-xs" title="Edit"
+                <a class="btn btn-info btn-xs" title="Edit"
                    href="javascript:ajaxLoad('product/update/{{$product->id}}')">
                     <i class="glyphicon glyphicon-edit"></i> Edit</a>
                 <a class="btn btn-danger btn-xs" title="Delete"

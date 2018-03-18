@@ -3,7 +3,7 @@
         <h3 class="page-header">Top 20 Product</h3>
         <table class="table">
             <thead>
-            <tr>
+            <tr bgcolor="#a9a9a9">
                 <th> No</th>
                 <th> Description</th>
                 <th style="text-align: center"> Quantity</th>
@@ -25,8 +25,8 @@
         <h3 class="page-header">Daily Sale Summary</h3>
         <table class="table">
             <thead>
-            <th>Category</th>
-            <th style="text-align: right">Net Amount</th>
+            <th bgcolor="#a9a9a9">Category</th>
+            <th style="text-align: right" bgcolor="#a9a9a9">Net Amount</th>
             </thead>
             <tbody>
             @foreach($sale as $key=>$value)

@@ -1,6 +1,6 @@
 <h2 class="page-header">User Management
     <div class="pull-right">
-        <a href="javascript:ajaxLoad('user/create')" class="btn btn-primary pull-right"><i
+        <a href="javascript:ajaxLoad('user/create')" class="btn btn-success pull-right"><i
                     class="glyphicon glyphicon-plus-sign"></i> New</a>
     </div>
 </h2>
@@ -24,7 +24,7 @@
 </div>
 <table class="table table-bordered table-striped">
     <thead>
-    <tr>
+    <tr bgcolor="#a9a9a9">
         <th width="50px" style="text-align: center">No</th>
         <th class="hidden-xs hidden-sm">
             <a href="javascript:ajaxLoad('user?field=username&sort={{Session::get("user_sort")=="asc"?"desc":"asc"}}')">
@@ -42,7 +42,7 @@
     <tbody>
     <?php $i = 1;?>
     @foreach($users as $key=>$user)
-        <tr>
+        <tr bgcolor="#fffacd">
             <td align="center">{{$i++}}</td>
             <td>{{$user->username}}</td>
             <td class="hidden-xs hidden-sm">{{$user->role}}</td>
@@ -51,7 +51,7 @@
                                                                                                  class='glyphicon glyphicon-remove'></i>"!!}
             </td>
             <td style="text-align: center">
-                <a class="btn btn-primary btn-xs" title="Edit"
+                <a class="btn btn-info btn-xs" title="Edit"
                    href="javascript:ajaxLoad('user/update/{{$user->id}}')">
                     <i class="glyphicon glyphicon-edit"></i> Edit</a>
                 <a class="btn btn-danger btn-xs" title="Delete"

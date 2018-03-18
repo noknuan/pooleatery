@@ -1,6 +1,6 @@
 <h1 class="page-header">Table
     <div class="pull-right">
-        <a href="javascript:ajaxLoad('table/create')" class="btn btn-primary pull-right"><i
+        <a href="javascript:ajaxLoad('table/create')" class="btn btn-success pull-right"><i
                     class="glyphicon glyphicon-plus-sign"></i> New</a>
     </div>
 </h1>
@@ -21,7 +21,7 @@
 </div>
 <table class="table table-bordered table-striped">
     <thead>
-    <tr>
+    <tr bgcolor="#a9a9a9">
         <th width="50px" style="text-align: center">No</th>
         <th>
             <a href="javascript:ajaxLoad('table?field=name&sort={{Session::get("table_sort")=="asc"?"desc":"asc"}}')">
@@ -37,11 +37,11 @@
     <tbody>
     <?php $i = 1;?>
     @foreach($tables as $key=>$table)
-        <tr>
+        <tr bgcolor="#fffacd">
             <td align="center">{{$i++}}</td>
             <td>{{$table->name}}</td>
             <td style="text-align: center">
-                <a class="btn btn-primary btn-xs" title="Edit"
+                <a class="btn btn-info btn-xs" title="Edit"
                    href="javascript:ajaxLoad('table/update/{{$table->id}}')">
                     <i class="glyphicon glyphicon-edit"></i> Edit</a>
                 <a class="btn btn-danger btn-xs" title="Delete"

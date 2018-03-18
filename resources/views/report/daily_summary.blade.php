@@ -11,7 +11,7 @@
     </div>
     <div class="form-group col-sm-3">
         <a href="javascript:window.open('report/print-daily-summary?report_from='+$('#report_from').val(),'_blank');"
-           class="btn btn-success"><i class="glyphicon glyphicon-print"></i> Print</a>
+           class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> Print</a>
     </div>
 </div>
 <h2 style="text-align: center;padding: 10px;background: whitesmoke">
@@ -20,7 +20,7 @@
     <div class="col-md-6">
         <table class="table table-bordered">
             <thead>
-            <tr>
+            <tr bgcolor="#a9a9a9">
                 <th style="text-align: center">Category</th>
                 <th style="text-align: center">Total</th>
             </tr>
@@ -40,7 +40,7 @@
     <div class="col-md-6">
         <table class="table table-bordered">
             <thead>
-            <tr style="font-size:14px">
+            <tr style="font-size:14px" bgcolor="#a9a9a9" >
                 <th style="text-align: center">Period</th>
                 <th style="text-align: center">Total</th>
             </tr>
