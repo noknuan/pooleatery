@@ -57,8 +57,8 @@
                     </li>
                     <li><a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-tags"></i> Master Data</a>
                         <ul class="nav" id="sidebar">
-                            <li class="nav_table"><a href="#table"><i class="glyphicon glyphicon-edit"></i> Table</a></li>
-                            <li class="nav_customer"><a href="#customer"><i class="glyphicon glyphicon-edit"></i> Customer</a></li>
+                            <li class="nav_table"><a href="#table"><i class="glyphicon glyphicon-cog"></i> Table</a></li>
+                            <li class="nav_customer"><a href="#customer"><i class="glyphicon glyphicon-cog"></i> Customer</a></li>
                         </ul>
                     </li>
 
@@ -66,10 +66,10 @@
                         <a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-tags"></i> Product</a>
                         <ul class="nav" id="sidebar">
                             <li class="nav_product">
-                                <a href="#product"><i class="glyphicon glyphicon-edit"></i> Product List</a>
+                                <a href="#product"><i class="glyphicon glyphicon-cog"></i> Product List</a>
                             </li>
                             <li class="nav_product_category">
-                                <a href="#product_category"><i class="glyphicon glyphicon-edit"></i> Product Category</a>
+                                <a href="#product_category"><i class="glyphicon glyphicon-cog"></i> Product Category</a>
                             </li>
 
                         </ul>
@@ -80,7 +80,7 @@
                         <ul class="nav" id="sidebar">
 
                             <li class="nav_report_daily-summary">
-                                <a href="#report/daily-summary"><i class="glyphicon glyphicon-edit"></i> Daily Summary Report</a>
+                                <a href="#report/daily-summary"><i class="glyphicon glyphicon-cog"></i> Daily Summary Report</a>
                             </li>
 
                         </ul>
