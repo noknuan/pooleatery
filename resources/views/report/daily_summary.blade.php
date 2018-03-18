@@ -28,7 +28,7 @@
             <tbody>
             @foreach($sale as $key=>$value)
                 @if($key!='Total')
-                    <tr style="font-size: 14px">
+                    <tr style="font-size: 14px"  bgcolor="#fffacd">
                         <td>{{$key}}</td>
                         <td align="right"> {{number_format($value['total'],2)}}</td>
                     </tr>
@@ -48,7 +48,7 @@
             <tbody>
             @foreach($orders as $key=>$value)
                 @if($key!='Total')
-                    <tr style="font-size: 14px">
+                    <tr style="font-size: 14px" bgcolor="#fffacd">
                         <td>{{$key}}</td>
                         <td align="right"> {{number_format($value['total'],2)}}</td>
                     </tr>
