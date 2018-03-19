@@ -35,7 +35,8 @@
                     </div>
                     <input type="hidden" name="active" value="1"/>
                     <div class="form-group">
-                        {!! Form::submit("Login",["class"=>"btn btn-warning"]) !!}
+                        {!! Form::button("<i class='glyphicon glyphicon-log-in'></i> Login",["type" => "submit","class"=>"btn
+   btn-danger","id"=>"btn_save"])!!}
                     </div>
                     {!! Form::close() !!}
                 </div>
