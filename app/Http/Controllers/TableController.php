@@ -15,7 +15,7 @@ class TableController extends Controller
         Session::put('table_field', Input::has('field') ? Input::get('field') : (Session::has('table_field') ? Session::get('table_field') : 'name'));
         Session::put('table_sort', Input::has('sort') ? Input::get('sort') : (Session::has('table_sort') ? Session::get('table_sort') : 'asc'));
         $tables = new Table();
-        $tables = $tables->where('name', 'like', '%' . Session::get('table_search') . '%')->orderBy(Session::get('table_field'), Session::get('table_sort'))->paginate(20);
+        $tables = $tables->where('name', 'like', '%' . Session::get('table_search') . '%')->orderBy(Session::get('table_field'), Session::get('table_sort'))->paginate(10);
         return view('table.index', ['tables' => $tables]);
     }
 

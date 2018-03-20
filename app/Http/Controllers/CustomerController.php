@@ -16,7 +16,7 @@ class CustomerController extends Controller
         Session::put('customer_field', Input::has('field') ? Input::get('field') : (Session::has('customer_field') ? Session::get('customer_field') : 'name'));
         Session::put('customer_sort', Input::has('sort') ? Input::get('sort') : (Session::has('customer_sort') ? Session::get('customer_sort') : 'asc'));
         $customers = new Customer();
-        $customers = $customers->where('name', 'like', '%' . Session::get('customer_search') . '%')->orderBy(Session::get('customer_field'), Session::get('customer_sort'))->paginate(20);
+        $customers = $customers->where('name', 'like', '%' . Session::get('customer_search') . '%')->orderBy(Session::get('customer_field'), Session::get('customer_sort'))->paginate(10);
         return view('customer.index', ['customers' => $customers]);
     }
 

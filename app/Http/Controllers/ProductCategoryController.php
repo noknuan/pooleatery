@@ -14,7 +14,7 @@ class ProductCategoryController extends Controller
         Session::put('product_category_search', Input::has('ok') ? Input::get('search') : (Session::has('product_category_search') ? Session::get('product_category_search') : ''));
         Session::put('product_category_field', Input::has('field') ? Input::get('field') : (Session::has('product_category_field') ? Session::get('product_category_field') : 'name'));
         Session::put('product_category_sort', Input::has('sort') ? Input::get('sort') : (Session::has('product_category_sort') ? Session::get('product_category_sort') : 'asc'));
-        $product_categories = ProductCategory::where('name', 'like', '%' . Session::get('product_category_search') . '%')->orderBy(Session::get('product_category_field'), Session::get('product_category_sort'))->paginate(20);
+        $product_categories = ProductCategory::where('name', 'like', '%' . Session::get('product_category_search') . '%')->orderBy(Session::get('product_category_field'), Session::get('product_category_sort'))->paginate(10);
         return view('product_category.index', ['product_categories' => $product_categories]);
     }
 
