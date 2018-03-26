@@ -50,30 +50,22 @@ class Handler extends ExceptionHandler
      * @param  \Illuminate\Auth\AuthenticationException  $exception
      * @return \Illuminate\Http\Response
      */
+    public function render($request, Exception $exception)
+    {
+        return parent::render($request, $exception);
+    }
     protected function unauthenticated($request, AuthenticationException $exception)
     {
+
         if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
+            return response()->json(['Error' => 'Sorry, your session seems to have expired. Please login again.'], 401);
         }
 
         return redirect()->guest(route('login'));
+        //return $request->expectsJson()
+         //   ? response()->json(['Error' => 'Sorry, your session seems to have expired. Please login again.'], 401)
+          //  : redirect()->guest(route('login', ['account' => $request->route('account')]));
     }
-    public function render($request, Exception $e)
-    {
-        if ($e instanceof ModelNotFoundException) {
-            $e = new NotFoundHttpException($e->getMessage(), $e);
-        }
 
-        if ($e instanceof \Illuminate\Session\TokenMismatchException) {
-
-            // flash your message
-
-            \Session::flash('flash_message_important', 'Sorry, your session seems to have expired. Please try again.');
-
-            return redirect('login');
-        }
-
-        return parent::render($request, $e);
-    }
 
 }
