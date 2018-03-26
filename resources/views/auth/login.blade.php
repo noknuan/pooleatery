@@ -15,7 +15,7 @@
     <div class="row-fluid" style="margin-top: 5px">
         <div class="col-md-6 col-md-offset-3" style="padding-top: 100px;padding-bottom: 15px ">
             <div class="row" >
-                <div class="col-sm-5 hidden-xs" style="text-align: center ; background-color: #2aabd2; padding-top: 56px;padding-bottom: 66px; border: double">
+                <div class="col-sm-5 hidden-xs" style="text-align: center ; background-color: #2aabd2; padding-top: 56px;padding-bottom: 74px; border: double">
                     <img src="{{asset("images/logo.png")}}" width="200" height="100"/>
                     <h4 style="font: menu">Point Of Sale System</h4>
                 </div>

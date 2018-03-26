@@ -59,7 +59,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'super_admin' => \App\Http\Middleware\SuperAdmin::class,
         'admin' => \App\Http\Middleware\Admin::class,
-        'cashier' => \App\Http\Middleware\Cashier::class
+        'cashier' => \App\Http\Middleware\Cashier::class,
+        'timeout' => \App\Http\Middleware\SessionTimeout::class
 
     ];
 }
