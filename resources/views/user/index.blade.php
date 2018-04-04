@@ -56,8 +56,11 @@
                     <i class="glyphicon glyphicon-edit"></i> Edit</a>
                 <a class="btn btn-danger btn-xs" title="Delete"
                 <a href="javascript:$.confirm({
+                icon: 'glyphicon glyphicon-warning-sign',
     title: 'Warning Alert!',
     content: 'Are you sure want to delete?',
+     type:'red',
+     typeAnimated: true,
     buttons: {
         confirm: function () {
 ajaxDelete('user/delete/{{$user->id}}','{{csrf_token()}}')

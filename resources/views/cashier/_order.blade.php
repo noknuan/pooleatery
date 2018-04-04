@@ -71,8 +71,11 @@
                     <td style="text-align: center;padding-top: 15px">
                         @if($orderDetail->status!='Filled' or (isset($orderDetail->product_id) and $orderDetail->product_id==0))
                             <a href="javascript:$.confirm({
+                             icon: 'glyphicon glyphicon-warning-sign',
     title: 'Warning Alert!',
     content: 'Are you sure want to delete?',
+    type:'red',
+    typeAnimated: true,
     buttons: {
         confirm: function () {
 

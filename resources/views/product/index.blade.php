@@ -67,8 +67,11 @@
                    href="javascript:ajaxLoad('product/update/{{$product->id}}')">
                     <i class="glyphicon glyphicon-edit"></i> Edit</a>
                 <a class="btn btn-danger btn-xs" title="Delete" href="javascript:$.confirm({
+                icon: 'glyphicon glyphicon-warning-sign',
                 title: 'Warning Alert!',
                 content: 'Are you sure want to delete?',
+                type:'red',
+                typeAnimated: true,
                 buttons: {
                 confirm: function () {
                 ajaxDelete('product/delete/{{$product->id}}','{{csrf_token()}}')
