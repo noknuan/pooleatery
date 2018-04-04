@@ -66,10 +66,18 @@
                 <a class="btn btn-info btn-xs" title="Edit"
                    href="javascript:ajaxLoad('product/update/{{$product->id}}')">
                     <i class="glyphicon glyphicon-edit"></i> Edit</a>
-                <a class="btn btn-danger btn-xs" title="Delete"
-                   href="javascript:if(confirm('Are you sure want to delete?')) ajaxDelete('product/delete/{{$product->id}}','{{csrf_token()}}')">
-                    <i class="glyphicon glyphicon-trash"></i> Delete
-                </a>
+                <a class="btn btn-danger btn-xs" title="Delete" href="javascript:$.confirm({
+                title: 'Warning Alert!',
+                content: 'Are you sure want to delete?',
+                buttons: {
+                confirm: function () {
+                ajaxDelete('product/delete/{{$product->id}}','{{csrf_token()}}')
+                },
+                cancel: function () {
+                },
+                }
+                });">
+                    <i class="glyphicon glyphicon-trash"></i> Delete </a>
             </td>
         </tr>
     @endforeach

@@ -11,6 +11,7 @@
     <link href="{{ asset('pickadate/themes/default.css') }}" rel="stylesheet">
     <link href="{{ asset('pickadate/themes/default.date.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery-confirm.css') }}" rel="stylesheet">
     <style>
         .picker__select--month, .picker__select--year {
             height: inherit;
@@ -113,5 +114,6 @@
 <script src="{{ asset('js/exporting.js') }}"></script>
 <script src="{{ asset('pickadate/picker.js') }}"></script>
 <script src="{{ asset('pickadate/picker.date.js') }}"></script>
+<script src="{{ asset('js/jquery-confirm.js') }}"></script>
 </body>
 </html>

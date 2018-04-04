@@ -9,6 +9,8 @@
     <link href="{{ asset('bootstrap-3.3.7/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sale.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery-confirm.css') }}" rel="stylesheet">
+
 </head>
 <body>
 <div class="modal fade " id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
@@ -52,6 +54,7 @@
 
 <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
 <script src="{{ asset('bootstrap-3.3.7/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery-confirm.js') }}"></script>
 <script>
     $('#modal, #modal_open, #modal_pay').on('shown.bs.modal', function () {
         $('#focus').focus().select();

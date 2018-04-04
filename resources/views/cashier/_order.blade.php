@@ -70,7 +70,20 @@
                     </td>
                     <td style="text-align: center;padding-top: 15px">
                         @if($orderDetail->status!='Filled' or (isset($orderDetail->product_id) and $orderDetail->product_id==0))
-                            <a href="javascript:if(confirm('Are you sure want to delete?')) ajaxDelete('cashier/delete/{{$orderDetail->id}}','{{csrf_token()}}','orderList')">
+                            <a href="javascript:$.confirm({
+    title: 'Warning Alert!',
+    content: 'Are you sure want to delete?',
+    buttons: {
+        confirm: function () {
+
+            ajaxDelete('cashier/delete/{{$orderDetail->id}}','{{csrf_token()}}','orderList')
+        },
+        cancel: function () {
+
+        },
+    }
+});
+                           ">
                                 <i class="glyphicon glyphicon-minus-sign" style="color: brown;"></i></a>
                         @endif
                     </td>

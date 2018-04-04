@@ -55,7 +55,18 @@
                    href="javascript:ajaxLoad('user/update/{{$user->id}}')">
                     <i class="glyphicon glyphicon-edit"></i> Edit</a>
                 <a class="btn btn-danger btn-xs" title="Delete"
-                   href="javascript:if(confirm('Are you sure want to delete?')) ajaxDelete('user/delete/{{$user->id}}','{{csrf_token()}}')">
+                <a href="javascript:$.confirm({
+    title: 'Warning Alert!',
+    content: 'Are you sure want to delete?',
+    buttons: {
+        confirm: function () {
+ajaxDelete('user/delete/{{$user->id}}','{{csrf_token()}}')
+        },
+        cancel: function () {
+
+        },
+    }
+});">
                     <i class="glyphicon glyphicon-trash"></i> Delete
                 </a>
             </td>

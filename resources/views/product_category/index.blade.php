@@ -54,7 +54,18 @@
                    href="javascript:ajaxLoad('product_category/update/{{$product_category->id}}')">
                     <i class="glyphicon glyphicon-edit"></i> Edit</a>
                 <a class="btn btn-danger btn-xs" title="Delete"
-                   href="javascript:if(confirm('Are you sure want to delete?')) ajaxDelete('product_category/delete/{{$product_category->id}}','{{csrf_token()}}')">
+                <a href="javascript:$.confirm({
+    title: 'Warning Alert!',
+    content: 'Are you sure want to delete?',
+    buttons: {
+        confirm: function () {
+ajaxDelete('product_category/delete/{{$product_category->id}}','{{csrf_token()}}')
+        },
+        cancel: function () {
+
+        },
+    }
+});">
                     <i class="glyphicon glyphicon-trash"></i> Delete
                 </a>
             </td>
