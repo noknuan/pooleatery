@@ -292,7 +292,8 @@ class CashierController extends Controller
         PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
         $pdf=PDF::loadView('cashier.printpdf_payment', ['order' => $order]);
         $pdf->setPaper('A6');
-        return $pdf->download('receipt.pdf');
+        return $pdf->stream("receipt.pdf", array("Attachment" => false));
+        //return $pdf->download('receipt.pdf');
     }
 
     public function pay(Request $request)
@@ -334,7 +335,8 @@ class CashierController extends Controller
         PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
         $pdf=PDF::loadView('cashier.printpdf', ['order' => Order::find(Session::get('order_id'))]);
         $pdf->setPaper('A6');
-        return $pdf->download('invoice.pdf');
+        return $pdf->stream("('invoice.pdf", array("Attachment" => false));
+        //return $pdf->download('invoice.pdf');
         //return View('cashier.print', ['order' => $order]);
     }
 

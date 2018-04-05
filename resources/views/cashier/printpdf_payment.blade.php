@@ -66,7 +66,7 @@
             <table width="100%" style="font-size: 12px">
                 @if($order->discount>0)
                     <tr>
-                        <th style="text-align: right;padding-right: 20px">Grand Total</th>
+                        <th style="text-align: right;padding-right: 20px">Grand Total:</th>
                         <th style="text-align: right">{{number_format($total,2)}}</th>
                     </tr>
                     <tr>
@@ -75,18 +75,18 @@
                     </tr>
                 @endif
                 <tr>
-                    <th style="text-align: right;padding-right: 20px">Net Amount</th>
+                    <th style="text-align: right;padding-right: 20px">Net Amount:</th>
                     <th style="text-align: right">{{number_format($total*(1-$order->discount/100),2)}}</th>
                 </tr>
                 @if(Session::get('usd')>0)
                     <tr>
-                        <th style="text-align: right;padding-right: 20px">Cash in</th>
+                        <th style="text-align: right;padding-right: 20px">Cash in:</th>
                         <th style="text-align: right">{{number_format(Session::get('usd'),2)}}</th>
                     </tr>
                 @endif
                 @if(Session::get('change_us')>0)
                     <tr>
-                        <th style="text-align: right;padding-right: 20px">Cash Return</th>
+                        <th style="text-align: right;padding-right: 20px">Cash Return:</th>
                         <th style="text-align: right">
                             {{number_format(Session::get('change_us'),2)}}</th>
                     </tr>

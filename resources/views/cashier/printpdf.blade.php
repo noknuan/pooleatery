@@ -12,8 +12,7 @@
     </style>
 </head>
 <body>
-    <center>
-        <h4 style="padding: 0px;margin: 0px">Invoice</h4>
+    <center><h4 style="padding: 0px;margin: 0px">Invoice</h4>
 </center>
 <table style="width:100%;font-size:12px">
     <tr>
