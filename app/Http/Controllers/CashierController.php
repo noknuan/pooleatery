@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use PDF;
 
 class CashierController extends Controller
 {
@@ -287,7 +288,11 @@ class CashierController extends Controller
             DB::rollback();
             return view('cashier._order', ['order' => $order, 'pay_error' => 1]);
         }
-        return view('cashier.print_payment', ['order' => $order]);
+        //return view('cashier.print_payment', ['order' => $order]);
+        PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
+        $pdf=PDF::loadView('cashier.printpdf_payment', ['order' => $order]);
+        $pdf->setPaper('A6');
+        return $pdf->download('receipt.pdf');
     }
 
     public function pay(Request $request)
@@ -326,9 +331,34 @@ class CashierController extends Controller
         $order->checked_out = date('Y-m-d H:i:s');
         $order->table->status = 'Printed';
         $order->push();
-        return View('cashier.print', ['order' => $order]);
+        PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
+        $pdf=PDF::loadView('cashier.printpdf', ['order' => Order::find(Session::get('order_id'))]);
+        $pdf->setPaper('A6');
+        return $pdf->download('invoice.pdf');
+        //return View('cashier.print', ['order' => $order]);
     }
 
+    public function pdfView()
+    {
+
+        PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
+        $pdf=PDF::loadView('cashier.printpdf', ['order' => Order::find(Session::get('order_id'))]);
+        $pdf->setPaper('A6');
+        return $pdf->download('invoice.pdf');
+    }
+    public function pdfViewReceipt()
+    {
+        //PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
+
+        //$pdf->setPaper('A6');
+        //return $pdf->download('invoice.pdf');
+        //PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
+        //$pdf=PDF::loadView('cashier.printpdf_payment', ['order' => Order::find(Session::get('order_id'))]);
+        //$pdf->setPaper('A6');
+        //return $pdf->download('receipt.pdf');
+        //$pdf=PDF::loadView('cashier.printpdf_payment', ['order' => Order::find(Session::get('order_id'))]);
+        //return $pdf->download('receipt.pdf');
+    }
     public function reloadOrder()
     {
         return view('cashier._order', ['order' => Order::find(Session::get('order_id'))]);

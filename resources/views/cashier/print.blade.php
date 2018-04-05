@@ -1,4 +1,7 @@
+
+<b><a href="{{url("cashier/pdf")}}" target="_blank">Print Invoice</a></b>
 <center>
+
     <img src="{{asset('images/logo.png')}}" height=80px" width="150px"/>
     <h2 style="font-size:16px;margin:0">The Pool Eatery</h2>
     <i style="font-size:11px;width:90%;display:block">Address: 100 Leaigmuang Road Pakpeak Muang Kanchanaburi</i>
@@ -75,8 +78,4 @@
     </tr>
 </table>
 <hr>
-<center><i style="font-size: 12px">Thank you, see you again! ขอบคุณค่ะ</i></center>
-<script>
-    //    window.print();
-    //    window.close();
-</script>
+

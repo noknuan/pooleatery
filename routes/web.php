@@ -110,6 +110,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('return-order', 'CashierController@returnOrder');
         Route::get('print-payment', 'CashierController@printPayment');
         Route::get('print', 'CashierController@getPrint');
+       // Route::get('pdf', 'CashierController@pdfView');
+      //  Route::get('pdfreceipt', 'CashierController@pdfViewReceipt');
         Route::get('reload-order', 'CashierController@reloadOrder');
     });
+
 });
