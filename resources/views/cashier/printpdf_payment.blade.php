@@ -96,6 +96,8 @@
         </td>
     </tr>
 </table>
-<h4 style="padding: 0px;margin: 0px">Thank you!!</h4>
+<center>
+    <h5 style="padding: 0px;margin: 0px">Thank you!!</h5>
+</center>
 </body>
 </html>
