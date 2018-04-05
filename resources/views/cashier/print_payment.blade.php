@@ -1,4 +1,4 @@
-<b><a href="{{url("cashier/pdfreceipt")}}" target="_blank">Print Receipt</a></b>
+<b><a href="{{url("cashier/pdfreceipt")}}" target="_blank">Print Invoice</a></b>
 <center>
     <img src="{{asset('images/logo.png')}}" height="80px" width="150px"/>
     <h1 style="font-size:20px;margin:0">The Pool Eatery</h1>

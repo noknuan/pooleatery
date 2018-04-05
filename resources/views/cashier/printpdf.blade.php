@@ -12,7 +12,10 @@
     </style>
 </head>
 <body>
-    <center><h4 style="padding: 0px;margin: 0px">Invoice</h4>
+<center>
+<h4 style="padding: 0px;margin: 0px">The Pool Eatery</h4>
+<h4 style="padding: 0px;margin: 0px">Invoice</h4>
+
 </center>
 <table style="width:100%;font-size:12px">
     <tr>
@@ -83,5 +86,6 @@
         </td>
     </tr>
 </table>
+<h4 style="padding: 0px;margin: 0px">Thank you!!</h4>
 </body>
 </html>
