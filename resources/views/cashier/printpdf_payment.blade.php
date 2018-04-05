@@ -1,11 +1,39 @@
-<!doctype html>
-<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        *{ font-family: DejaVu Sans !important;}
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: normal;
+            font-weight: normal;
+            src: url("{{ public_path('fonts/THSarabunNew.ttf') }}") format('truetype');
+
+        }
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: normal;
+            font-weight: bold;
+            src: url("{{ public_path('fonts/THSarabunNew Bold.ttf') }}") format('truetype');
+
+        }
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: italic;
+            font-weight: normal;
+            src: url("{{ public_path('fonts/THSarabunNew Italic.ttf') }}") format('truetype');
+
+        }
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: italic;
+            font-weight: bold;
+            src: url("{{ public_path('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype');
+
+        }
+        body {
+            font-family: "THSarabunNew";
+        }
         .page-break {
             page-break-after: always;
         }
@@ -13,17 +41,18 @@
 </head>
 <body>
 <center>
-    <h4 style="padding: 0px;margin: 0px">The Pool Eatery</h4>
-<h4 style="padding: 0px;margin: 0px">Receipt</h4>
+<h2 style="padding: 0px;margin: 0px">The Pool Eatery</h2>
+<h2 style="padding: 0px;margin: 0px">Receipt</h2>
+
 </center>
-<table style="width:100%;font-size:12px">
-    <tr>
+<table style="width:100%;font-size:20px">
+    <tr style="padding: 0px;margin: 0px">
         <td width="80px" style="text-align:right">Receipt #:</td>
         <td style="text-align:left">{{str_pad($order->id,6,0,0)}}</td>
         <td style="width:60px;text-align:right">Date:</td>
         <td style="text-align:left;width:100px">{{date("d-M-Y",strtotime($order->updated_at))}}</td>
     </tr>
-    <tr>
+    <tr style="padding: 0px;margin: 0px">
         <td width="80px" style="text-align:right">Table No:</td>
         <td style="text-align:left">{{$order->table->name}}</td>
         <td style="width:60px;text-align:right">Cashier:</td>
@@ -34,22 +63,22 @@
         <td style="text-align:left">{{!empty($order->customer_id)&&$order->customer_id!='-1'?$order->customer->name:'General'}}</td>
     </tr>
 </table>
-<table style="width:100%;margin-top:10px" border="0" cellspacing="0" cellpadding="2px">
-    <tr style="font-size:13px">
+<table style="width:100%;margin-top:10px" border="0" cellspacing="0" cellpadding="0">
+    <tr style="font-size:18px ;padding: 0px;margin: 0px">
         <th width="20px">No</th>
         <th>Description</th>
         <th style="width:8%;text-align: center">Qty</th>
         <th style="width:16%;text-align: right">Price</th>
         <th style="width:18%;text-align: right">Total</th>
     </tr>
-    <tr style="font-size:14px">
+    <tr style="font-size:18px">
         <th colspan="6" align="left">
             <hr>
         </th>
     </tr>
     <?php $total = 0; $i = 1;?>
     @foreach($order->order_details()->select(DB::raw("description,sum(quantity) as quantity,price,discount"))->groupBy('product_id')->groupBy('price')->groupBy('description')->groupBy('discount')->orderBy('description')->get() as $orderDetail)
-        <tr style="font-size:11px;@if(!empty($orderDetail->deleted_at)) text-decoration: line-through; @endif">
+        <tr style="font-size:18px;@if(!empty($orderDetail->deleted_at)) text-decoration: line-through; @endif">
             <td align="center">{{$i++}}</td>
             <td align="left">{{$orderDetail->description}}</td>
             <td align="center">{{$orderDetail->quantity}}</td>
@@ -64,7 +93,7 @@
 <table width="100%">
     <tr>
         <td align="right">
-            <table width="100%" style="font-size: 12px">
+            <table width="100%" style="font-size: 18px">
                 @if($order->discount>0)
                     <tr>
                         <th style="text-align: right;padding-right: 20px">Grand Total:</th>
@@ -97,7 +126,7 @@
     </tr>
 </table>
 <center>
-    <h5 style="padding: 0px;margin: 0px">Thank you!!</h5>
+    <h2 style="padding: 0px;margin: 0px">Thank you!!</h2>
 </center>
 </body>
 </html>
