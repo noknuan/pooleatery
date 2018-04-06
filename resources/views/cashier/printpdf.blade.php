@@ -5,29 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        @font-face {
-            font-family: 'THSarabunNew';
-            font-style: normal;
-            font-weight: normal;
-            src: url("http://eclecticgeek.com/dompdf/fonts/Elegance.ttf") format("truetype");
-
+        *{ font-family: DejaVu Sans !important;}
+        .page-break {
+            page-break-after: always;
         }
-
-        body {
-            font-family: "THSarabunNew";
-        }
-    .page-break {
-        page-break-after: always;
-    }
     </style>
 </head>
 <body>
 <center>
-<h2 style="padding: 0px;margin: 0px">The Pool Eatery</h2>
-<h2 style="padding: 0px;margin: 0px">Invoice</h2>
-
+    <h4 style="padding: 0px;margin: 0px">Invoice</h4>
 </center>
-<table style="width:100%;font-size:20px;">
+<table style="width:100%;font-size:12px">
     <tr>
         <td width="80px" style="text-align:right">Invoice #:</td>
         <td style="text-align:left">{{str_pad($order->id,6,0,0)}}</td>
@@ -45,8 +33,8 @@
         <td style="text-align:left">{{!empty($order->customer_id)&&$order->customer_id!='-1'?$order->customer->name:'General'}}</td>
     </tr>
 </table>
-<table style="width:100%;margin-top:10px" border="0" cellspacing="0" cellpadding="2px"; >
-    <tr style="font-size:18px">
+<table style="width:100%;margin-top:10px" border="0" cellspacing="0" cellpadding="2px">
+    <tr style="font-size:13px">
         <th width="20px">No</th>
         <th>Description</th>
         <th style="width:8%;text-align: center;">Qty</th>
@@ -54,14 +42,14 @@
         {{--<th style="width:12%">D.C</th>--}}
         <th style="width:18%;text-align: right">Total</th>
     </tr>
-    <tr style="font-size:18px">
+    <tr style="font-size:14px">
         <th colspan="6" align="left">
             <hr>
         </th>
     </tr>
     <?php $total = 0;$i = 1 ?>
     @foreach($order->order_details()->select(DB::raw("description,sum(quantity) as quantity,price,discount"))->groupBy('product_id')->groupBy('price')->groupBy('description')->groupBy('discount')->orderBy('description')->get() as $orderDetail)
-        <tr style="font-size:18px;@if(!empty($orderDetail->deleted_at)) text-decoration: line-through; @endif">
+        <tr style="font-size:11px;@if(!empty($orderDetail->deleted_at)) text-decoration: line-through; @endif">
             <td align="center">{{$i++}}</td>
             <td align="left">{{$orderDetail->description}}</td>
             <td align="center">{{$orderDetail->quantity}}</td>
@@ -74,10 +62,10 @@
     @endforeach
 </table>
 <hr>
-<table width="100%;font-size:20px;">
+<table width="100%">
     <tr>
         <td align="right">
-            <table width="100%" style="font-size: 18px">
+            <table width="100%" style="font-size: 12px">
                 @if($order->discount>0)
                     <tr>
                         <th style="text-align: right;padding-right: 20px">Grand Total:</th>
@@ -96,8 +84,5 @@
         </td>
     </tr>
 </table>
-<center>
-<h2 style="padding: 0px;margin: 0px">Thank you!!</h2>
-</center>
 </body>
 </html>
