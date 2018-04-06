@@ -13,6 +13,7 @@
 </head>
 <body>
 <center>
+    <h4 style="padding: 0px;margin: 0px">The Pool Eatery</h4>
     <h4 style="padding: 0px;margin: 0px">Receipt</h4>
 </center>
 <table style="width:100%;font-size:12px">
