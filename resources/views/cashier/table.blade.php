@@ -3,9 +3,9 @@
     </button>
     <h4 class="modal-title">Select Table</h4>
     Status:
-    <img src="{{asset('images/free.png')}}" height="20px" width="20px"/> Free
-    <img src="{{asset('images/busy.png')}}" height="20px" width="20px"/> Busy
-    <img src="{{asset('images/invoice.png')}}" height="20px" width="20px"/> Print Invoice
+    <img src="{{asset('images/free.PNG')}}" height="20px" width="20px"/> Free
+    <img src="{{asset('images/busy.PNG')}}" height="20px" width="20px"/> Busy
+    <img src="{{asset('images/invoice.PNG')}}" height="20px" width="20px"/> Print Invoice
 </div>
 <div class="modal-body">
     <div class="row">
