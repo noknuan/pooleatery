@@ -98,7 +98,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('change-table', 'CashierController@changeTable');
         Route::get('switch-table/{id}', 'CashierController@switchTable');
         Route::get('order/{id}', 'CashierController@order');
-        Route::get('update-description/{id}/{value}', 'CashierController@updateDescription');
+        Route::get('update-description/{id}/{value}', 'Ca shierController@updateDescription');
         Route::get('update-quantity/{id}/{value}', 'CashierController@updateQuantity');
         Route::get('update-price/{id}/{value}', 'CashierController@updatePrice');
         Route::get('update-discount-detail/{id}/{value}', 'CashierController@updateDiscountDetail');

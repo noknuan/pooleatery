@@ -17,7 +17,7 @@
             <div class="row" >
                 <div class="col-sm-5 hidden-xs" style="text-align: center ; background-color: #2aabd2; padding-top: 56px;padding-bottom: 70px; border: double gray">
                     <img src="{{asset("images/logo.png")}}" width="200" height="100"/>
-                    <h4>Point Of Sale System</h4>
+                    <h4>Point-Of-Sale System</h4>
                 </div>
 
                 <div class="col-sm-7" style="background: #ffea23; padding-top: 50px ;padding-bottom: 19px;border: double gray">
