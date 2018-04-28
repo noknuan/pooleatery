@@ -153,37 +153,6 @@ class CashierController extends Controller
         return view('cashier._order', ['order' => Order::find(Session::get('order_id'))]);
     }
 
-    public function switchTable($id)
-    {
-        Session::put('table_id', $id);
-        $ids = Input::get('ids');
-        $oldorder = Order::find(Session::get('order_id'));
-        $neworder = Order::where('table_id', Session::get('table_id'))->where('status', '!=', 'Completed')->where('status', '!=', 'Moved')->where(DB::raw('date(created_at)'), date('Y-m-d'))->first();
-        if (count($neworder) == 0) {
-            $neworder = new Order();
-            $neworder->table_id = Session::get('table_id');
-            $neworder->checked_in = $oldorder->checked_out;
-            $neworder->user_id = Auth::user()->id;
-        }
-        $neworder->status = 'Busy';
-        $neworder->table->status = 'Busy';
-        $neworder->push();
-        if ($ids != '')
-            $orderDetails = OrderDetail::where('order_id', Session::get('order_id'))->whereIn('id', explode(',', $ids))->get();
-        else
-            $orderDetails = OrderDetail::where('order_id', Session::get('order_id'))->get();
-        foreach ($orderDetails as $orderDetail) {
-            $orderDetail->order_id = $neworder->id;
-            $orderDetail->save();
-        }
-        if (count($oldorder->order_details) == 0) {
-            $oldorder->table->status = 'Free';
-            $oldorder->push();
-            $oldorder->delete();
-        }
-        Session::put('order_id', $neworder->id);
-        return view('cashier._order', ['order' => $neworder]);
-    }
 
     public function table()
     {
@@ -204,11 +173,7 @@ class CashierController extends Controller
         return view('cashier._order', ['order' => $order]);
     }
 
-    public function changeTable()
-    {
-        Session::put('selected_items', Input::get('ids'));
-        return view('cashier.change_table', ['tables' => Table::where('id', '!=', Session::get('table_id'))->orderBy('name')->get()]);
-    }
+
 
     public function delete($id)
     {
@@ -348,19 +313,7 @@ class CashierController extends Controller
         $pdf->setPaper('A6');
         return $pdf->download('invoice.pdf');
     }
-    public function pdfViewReceipt()
-    {
-        //PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
 
-        //$pdf->setPaper('A6');
-        //return $pdf->download('invoice.pdf');
-        //PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
-        //$pdf=PDF::loadView('cashier.printpdf_payment', ['order' => Order::find(Session::get('order_id'))]);
-        //$pdf->setPaper('A6');
-        //return $pdf->download('receipt.pdf');
-        //$pdf=PDF::loadView('cashier.printpdf_payment', ['order' => Order::find(Session::get('order_id'))]);
-        //return $pdf->download('receipt.pdf');
-    }
     public function reloadOrder()
     {
         return view('cashier._order', ['order' => Order::find(Session::get('order_id'))]);

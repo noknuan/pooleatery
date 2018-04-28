@@ -45,7 +45,7 @@
             </i>
         </th>
         <th class="hidden-xs hidden-sm">Category</th>
-        <th style="text-align: right">Unitprice</th>
+        <th style="text-align: right">Unitprice (Bath)</th>
         <th width="140px" style="text-align: center">Action</th>
     </tr>
     </thead>

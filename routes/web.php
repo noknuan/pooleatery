@@ -74,20 +74,10 @@ Route::group(['middleware' => 'auth'], function () {
             Route::delete('delete/{id}', 'RecipeController@delete');
         });
         Route::group(['prefix' => 'report'], function () {
-            Route::get('stock-balance', 'ReportController@stockBalance');
-            Route::get('print-stock-balance', 'ReportController@printStockBalance');
-            Route::get('stock-in', 'ReportController@stockIn');
-            Route::get('stock-adjustment', 'ReportController@stockAdjustment');
+
             Route::get('daily-summary', 'ReportController@dailySummary');
             Route::get('print-daily-summary', 'ReportController@printDailySummary');
-            Route::get('sale-history', 'ReportController@saleHistory');
-            Route::get('sale-deleted-report', 'ReportController@saleDeletedReport');
-            Route::get('sale-detail', 'ReportController@saleDetail');
-            Route::get('export-detail-report', 'ReportController@exportDetailReport');
-            Route::get('sale-stock', 'ReportController@saleStock');
-            Route::get('sale-discount', 'ReportController@saleDiscount');
-            Route::get('sale-graph', 'ReportController@saleGraph');
-            Route::get('view-detail/{id}', 'ReportController@viewDetail');
+
         });
     });
     Route::group(['prefix' => 'cashier', 'middleware' => 'cashier'], function () {
@@ -95,10 +85,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('products', 'CashierController@products');
         Route::get('table', 'CashierController@table');
         Route::get('select-table/{id}', 'CashierController@selectTable');
-        Route::get('change-table', 'CashierController@changeTable');
-        Route::get('switch-table/{id}', 'CashierController@switchTable');
         Route::get('order/{id}', 'CashierController@order');
-        Route::get('update-description/{id}/{value}', 'Ca shierController@updateDescription');
+        Route::get('update-description/{id}/{value}', 'CashierController@updateDescription');
         Route::get('update-quantity/{id}/{value}', 'CashierController@updateQuantity');
         Route::get('update-price/{id}/{value}', 'CashierController@updatePrice');
         Route::get('update-discount-detail/{id}/{value}', 'CashierController@updateDiscountDetail');
@@ -110,8 +98,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('return-order', 'CashierController@returnOrder');
         Route::get('print-payment', 'CashierController@printPayment');
         Route::get('print', 'CashierController@getPrint');
-       // Route::get('pdf', 'CashierController@pdfView');
-      //  Route::get('pdfreceipt', 'CashierController@pdfViewReceipt');
         Route::get('reload-order', 'CashierController@reloadOrder');
     });
 

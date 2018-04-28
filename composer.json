@@ -11,6 +11,7 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
+        "phpmetrics/phpmetrics": "^2.3",
         "uxweb/sweet-alert": "^1.4"
     },
     "require-dev": {

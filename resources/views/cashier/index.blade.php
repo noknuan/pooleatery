@@ -11,12 +11,12 @@
         </div>
         <div class="col-md-4">
             <input type="text" class="form-control" placeholder="Search..."
-                   style="border: 2px solid whitesmoke;height: 40px;border-radius: 0px;background: lightyellow;font-size: 16px"
+                   style="border: 1px solid whitesmoke;height: 40px;border-radius: 0px;background: lightyellow;font-size: 16px"
                    onfocus="$(this).select()"
                    onkeyup="ajaxLoad('cashier/products?search='+this.value,'productList')"/>
             <div id="productList">
                 <ul class="list-group"
-                    style="height: 520px;overflow-y: auto;border: 2px outset;background: #ffe9f9">
+                    style="height: 500px;overflow-y: auto;border: 2px outset;background: #ffe9f9">
                     @foreach(\App\Product::where('product_category_id',Session::get('menuCategory_id'))->orderBy('name')->get() as $menu)
                         <li class="list-group-item"
                             style="font-size: 16px;padding:0px;height: 80px"
@@ -43,7 +43,7 @@
         </div>
     <div class="col-md-4" id="orderList" style="padding: 1px 1px 1px 1px">
         @include('cashier._order')
-
+        
     </div>
 
     </div>
