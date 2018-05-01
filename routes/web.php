@@ -27,7 +27,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::match(['get', 'put'], 'change-password', 'UserController@changePassword');
         Route::group(['prefix' => 'home'], function () {
             Route::get('/', 'HomeController@index');
-            Route::match(['get', 'post'], 'exchange-rate', 'HomeController@exchangeRate');
         });
         Route::group(['prefix' => 'table'], function () {
             Route::get('/', 'TableController@index');
@@ -40,19 +39,6 @@ Route::group(['middleware' => 'auth'], function () {
             Route::match(['get', 'post'], 'create', 'CustomerController@create');
             Route::match(['get', 'put'], 'update/{id}', 'CustomerController@update');
             Route::delete('delete/{id}', 'CustomerController@delete');
-        });
-        Route::group(['prefix' => 'item'], function () {
-            Route::get('/', 'ItemController@index');
-            Route::get('unit/{item_id}', 'ItemController@unit');
-            Route::match(['get', 'post'], 'create', 'ItemController@create');
-            Route::match(['get', 'put'], 'update/{id}', 'ItemController@update');
-            Route::delete('delete/{id}', 'ItemController@delete');
-        });
-        Route::group(['prefix' => 'item_category'], function () {
-            Route::get('/', 'ItemCategoryController@index');
-            Route::match(['get', 'post'], 'create', 'ItemCategoryController@create');
-            Route::match(['get', 'put'], 'update/{id}', 'ItemCategoryController@update');
-            Route::delete('delete/{id}', 'ItemCategoryController@delete');
         });
         Route::group(['prefix' => 'product'], function () {
             Route::get('/', 'ProductController@index');
@@ -67,17 +53,10 @@ Route::group(['middleware' => 'auth'], function () {
             Route::match(['get', 'put'], 'update/{id}', 'ProductCategoryController@update');
             Route::delete('delete/{id}', 'ProductCategoryController@delete');
         });
-        Route::group(['prefix' => 'recipe'], function () {
-            Route::get('/', 'RecipeController@index');
-            Route::match(['get', 'post'], 'create', 'RecipeController@create');
-            Route::match(['get', 'put'], 'update/{id}', 'RecipeController@update');
-            Route::delete('delete/{id}', 'RecipeController@delete');
-        });
-        Route::group(['prefix' => 'report'], function () {
 
+        Route::group(['prefix' => 'report'], function () {
             Route::get('daily-summary', 'ReportController@dailySummary');
             Route::get('print-daily-summary', 'ReportController@printDailySummary');
-
         });
     });
     Route::group(['prefix' => 'cashier', 'middleware' => 'cashier'], function () {

@@ -11,8 +11,4 @@ class Product extends Model
         return $this->belongsTo('App\ProductCategory');
     }
 
-    public function recipes()
-    {
-        return $this->hasMany('App\Recipe');
-    }
 }

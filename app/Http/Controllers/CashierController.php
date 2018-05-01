@@ -2,12 +2,10 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
-use App\Item;
 use App\Product;
 use App\ProductCategory;
 use App\Order;
 use App\OrderDetail;
-use App\Recipe;
 use App\Table;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -178,11 +176,10 @@ class CashierController extends Controller
     public function delete($id)
     {
         $order_detail = OrderDetail::find($id);
-//        if ($order_detail->product_id != 0) {
         $order_detail->user_id = Auth::user()->id;
         $order_detail->save();
         $order_detail->delete();
-//        }
+
         return view('cashier._order', ['order' => Order::find(Session::get('order_id'))]);
     }
 
@@ -239,14 +236,6 @@ class CashierController extends Controller
             $order->usd = Session::get('usd');
             $order->table->status = 'Free';
             $order->push();
-            foreach ($order->order_details()->whereNotNull('product_id')->get() as $order_detail) {
-                $recipes = Recipe::where('product_id', $order_detail->product_id)->get();
-                foreach ($recipes as $recipe) {
-                    $item = Item::find($recipe->item_id);
-                    $item->quantity -= ($recipe->quantity * $order_detail->quantity);
-                    $item->save();
-                }
-            }
             DB::commit();
             Session::put('order_id', '');
         } catch (\Exception $ex) {
