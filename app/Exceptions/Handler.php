@@ -60,11 +60,8 @@ class Handler extends ExceptionHandler
         if ($request->expectsJson()) {
             return response()->json(['Error' => 'Sorry, your session seems to have expired. Please login again.'], 401);
         }
-
         return redirect()->guest(route('login'));
-        //return $request->expectsJson()
-         //   ? response()->json(['Error' => 'Sorry, your session seems to have expired. Please login again.'], 401)
-          //  : redirect()->guest(route('login', ['account' => $request->route('account')]));
+
     }
 
 

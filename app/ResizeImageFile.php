@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Senghok Eang
- * Date: 3/16/2016
- * Time: 10:17 AM
- */
 namespace App;
 Class ResizeImageFile
 {
