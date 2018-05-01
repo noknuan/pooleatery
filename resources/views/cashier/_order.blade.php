@@ -9,7 +9,7 @@
         <i class="glyphicon glyphicon-cutlery"></i> <b id="table_id">{{Session::has('table_id')?\App\Table::find(Session::get('table_id'))->name:'Table #'}}</b>
     </a>
 
-    <a  style="@if(Session::get('table_id')=='' || count($order)==0) pointer-events: none @endif"
+    <a  style="@if(Session::get('table_id')=='') pointer-events: none @endif"
             class="btn btn-primary pay" data-toggle="modal" data-target="#modal_open" href="cashier/open">
        <i class="glyphicon glyphicon-plus-sign"></i> New Order
     </a>
