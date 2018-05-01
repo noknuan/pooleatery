@@ -305,15 +305,6 @@ class CashierController extends Controller
         //return View('cashier.print', ['order' => $order]);
     }
 
-    public function pdfView()
-    {
-
-        PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
-        $pdf=PDF::loadView('cashier.printpdf', ['order' => Order::find(Session::get('order_id'))]);
-        $pdf->setPaper('A6');
-        return $pdf->download('invoice.pdf');
-    }
-
     public function reloadOrder()
     {
         return view('cashier._order', ['order' => Order::find(Session::get('order_id'))]);
