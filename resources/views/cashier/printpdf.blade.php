@@ -40,7 +40,6 @@
         <th>Description</th>
         <th style="width:8%;text-align: center;">Qty</th>
         <th style="width:16%;text-align: right">Price</th>
-        {{--<th style="width:12%">D.C</th>--}}
         <th style="width:18%;text-align: right">Total</th>
     </tr>
     <tr style="font-size:14px">
@@ -55,7 +54,6 @@
             <td align="left">{{$orderDetail->description}}</td>
             <td align="center">{{$orderDetail->quantity}}</td>
             <td align="right">{{number_format($orderDetail->price,2)}}</td>
-            {{--<td align="center">{{$orderDetail->discount}}%</td>--}}
             <td align="right">
                 {{number_format($orderDetail->quantity * $orderDetail->price * (1 - $orderDetail->discount / 100),2)}}</td>
             <?php if (empty($orderDetail->deleted_at)) $total += ($orderDetail->price * $orderDetail->quantity * (1 - $orderDetail->discount / 100)); ?>

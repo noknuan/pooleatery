@@ -10,7 +10,7 @@
             @endforeach
         </div>
         <div class="col-md-4">
-            <input type="text" class="form-control" placeholder="Search..."
+            <input type="text" class="form-control" placeholder="Enter text to search the order..."
                    style="border: 1px solid whitesmoke;height: 40px;border-radius: 0px;background: lightyellow;font-size: 16px"
                    onfocus="$(this).select()"
                    onkeyup="ajaxLoad('cashier/products?search='+this.value,'productList')"/>
@@ -43,7 +43,7 @@
         </div>
     <div class="col-md-4" id="orderList" style="padding: 1px 1px 1px 1px">
         @include('cashier._order')
-        
+
     </div>
 
     </div>
