@@ -16,3 +16,6 @@
         @endforeach
     </div>
 </div>
+<div class="modal-footer">
+
+</div>

@@ -139,5 +139,10 @@ body {  background-image: url("../images/cashier.jpg");
 .modal {
     background: rgba(245, 199, 145, 0.5);
 }
+input[type=text]{
+    background: lightyellow;
+    width :350px;
+    alignment: center;
+}
 
 

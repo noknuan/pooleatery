@@ -1,5 +1,4 @@
 <div class="modal-body">
-    <div class="row">
         <div class="form-group required" id="form-description-error">
             {!! Form::label("description","Description",["class"=>"control-label"]) !!}
             {!! Form::text("description",null,["class"=>"form-control required","id"=>"focus","autocomplete"=>"off"]) !!}
@@ -15,9 +14,7 @@
             {!! Form::text("price",null,["class"=>"form-control required","autocomplete"=>"off"]) !!}
             <span id="price-error" class="help-block"></span>
         </div>
-    </div>
 </div>
-
 <div class="modal-footer">
     {!! Form::button("<i class='glyphicon glyphicon-remove'></i> Close",["class"=>"btn
     btn-primary","data-dismiss"=>"modal"])!!}
