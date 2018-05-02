@@ -16,9 +16,8 @@
 }
 
 .menu {
-    /*background: #2dcbeb;*/
-    background-image: url("../images/food2.jpg");
-    color: #010203;
+    background-color: #3f21ff;
+    color: #fafffe;
     margin: 10px;
     margin-left: 0px;
     text-align: center;
@@ -31,12 +30,16 @@
     margin-bottom: 0px;
     cursor: pointer;
     border-radius: 4px;
-    border: 2px outset #545146;
+    border: 2px outset #fafffe;
 }
 
+.menu:hover {
+    background-color: #ffe9f9;
+    color: #0a0208;
+}
 .active {
-    color: #9f9f9a;
-    border: 2px outset #370fa9;
+    color: #0a0208;
+    border: 2px outset #f0ff25;
 }
 
 .tbl {
@@ -59,12 +62,15 @@
 }
 
 a.pay {
-    text-decoration: none;
+    text-decoration: blink;
 }
 
 .pay:hover {
-
+    background-color: #a8edff;
 }
+
+.tbl:hover
+{ background-color: #ffe9f9; }
 
 .opt {
     /*text-shadow: 0 1px 0 whitesmoke;*/

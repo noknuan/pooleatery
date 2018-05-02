@@ -24,8 +24,14 @@
     color: rgba(1, 2, 3, 0.97);
     padding: 7px;
 }
-.nav#sidebar > li > a:hover,
-.nav#sidebar > li > a:focus,
+.nav#sidebar > li > a:hover
+{
+    background-color: #fff7dd;
+}
+.nav#sidebar > li > a:focus
+{
+    background-color: #ffbf2b;
+}
 .nav#sidebar > li.active > a {
     text-decoration: none;
     background-color: #efe20b;
