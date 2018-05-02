@@ -17,6 +17,7 @@
         </div>
     </div>
 </div>
+
 <div class="modal-footer">
     {!! Form::button("<i class='glyphicon glyphicon-remove'></i> Close",["class"=>"btn
     btn-primary","data-dismiss"=>"modal"])!!}

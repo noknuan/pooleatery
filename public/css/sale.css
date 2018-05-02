@@ -136,3 +136,8 @@ span.symbol {
 body {  background-image: url("../images/cashier.jpg");
     background-repeat: round;
 }
+.modal {
+    background: rgba(245, 199, 145, 0.5);
+}
+
+

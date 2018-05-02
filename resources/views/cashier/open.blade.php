@@ -1,7 +1,7 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
     </button>
-    <h4 class="modal-title">Open Order</h4>
+    <h4 class="modal-title">Open New Order</h4>
 </div>
 {!! Form::open(["id"=>"updateForm"]) !!}
 @include("cashier._form")
