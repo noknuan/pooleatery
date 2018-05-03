@@ -44,6 +44,16 @@
         </div>
     </div>
 </div>
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left" style="padding-left: 400px">The Restaurant Management System By
+            <a href="mailto:noknuan@hotmail.com"> Nok Phannaphop
+        </p>
+            <a href="https://github.com/noknuan/pooleatery" class="navbar-btn btn-danger btn pull-right">
+                <span class="glyphicon glyphicon-star"></span>  GitHub Code</a>
+
+    </div>
+</div>
 <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
 <script src="{{ asset('bootstrap-3.3.7/js/bootstrap.min.js') }}"></script>
 </body>
