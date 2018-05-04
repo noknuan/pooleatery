@@ -1,7 +1,7 @@
 <div class="modal-body">
         <div class="form-group required" id="form-description-error">
             {!! Form::label("description","Description",["class"=>"control-label"]) !!}
-            {!! Form::text("description",null,["class"=>"form-control required","id"=>"focus","autocomplete"=>"off","placeholder"=>"Enter gdescription"]) !!}
+            {!! Form::text("description",null,["class"=>"form-control required","id"=>"focus","autocomplete"=>"off","placeholder"=>"Enter description"]) !!}
             <span id="description-error" class="help-block"></span>
         </div>
         <div class="form-group required" id="form-quantity-error">
