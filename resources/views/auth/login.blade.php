@@ -20,7 +20,7 @@
                    <h4 style="color: #fffa15"><b>Point-Of-Sale System </b></h4>
                 </div>
 
-                <div class="col-sm-7" style="background: #ffd0df; padding-top: 50px ;padding-bottom: 19px;border: double gray">
+                <div class="col-sm-7" style="background: #ff9351; padding-top: 50px ;padding-bottom: 19px;border: double gray">
                     {!! Form::open(['url'=>'/login']) !!}
                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                         {!! Form::label("username","Username") !!}
