@@ -36,19 +36,19 @@
     <img src="{{asset('images/logo.png')}}" height="80px" width="170px"/>
     <button class="navbar-toggle collapsed" data-toggle="collapse"
             data-target="#menu" aria-expanded="false">
-        <i style="color: darkgrey" class="glyphicon glyphicon-menu-down"></i> Menu
+        <i style="color: #26e770" class="glyphicon glyphicon-menu-down"></i> Menu
     </button>
 </div>
 <div class="container-fluid" style="padding-bottom: 160px">
     <div class="row-fluid" style="margin-top: 10px">
         <div class="col-sm-4 col-md-3">
             <div class="collapse navbar-collapse" id="menu" style="background:#4f80ff ; border: doubles">
-                <div style="background: grey;margin: 10px 0;padding: 4px 0">
+                <div style="background: #0a0208;margin: 10px 0;padding: 4px 0">
                 <table width="100%">
                     <tr bgcolor="#a9a9a9">
                         <td width="30%" style="padding:0 5px 0 5px"></td>
                         <td>
-                            <b style="font-size: 150%;color: #f51e32"> Admin Menu </b></td>
+                            <b style="font-size: 150%;color: #fafffe"> Admin Menu </b></td>
                     </tr>
                 </table>
             </div>
