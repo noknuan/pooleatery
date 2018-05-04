@@ -15,12 +15,12 @@
     <div class="row-fluid" style="margin-top: 5px">
         <div class="col-md-6 col-md-offset-3" style="padding-top: 100px;padding-bottom: 10px ">
             <div class="row" >
-                <div class="col-sm-5 hidden-xs" style="text-align: center ; background-color: #1916d2; padding-top: 56px;padding-bottom: 70px; border: double gray">
+                <div class="col-sm-5 hidden-xs" style="text-align: center ; background-color: #77cfd2; padding-top: 56px;padding-bottom: 70px; border: double gray">
                     <img src="{{asset("images/logo.png")}}" width="200" height="100"/>
                    <h4 style="color: #fffa15"><b>Point-Of-Sale System </b></h4>
                 </div>
 
-                <div class="col-sm-7" style="background: #ff9351; padding-top: 50px ;padding-bottom: 19px;border: double gray">
+                <div class="col-sm-7" style="background: #ffd0df; padding-top: 50px ;padding-bottom: 19px;border: double gray">
                     {!! Form::open(['url'=>'/login']) !!}
                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                         {!! Form::label("username","Username") !!}
