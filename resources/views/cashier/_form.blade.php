@@ -19,5 +19,5 @@
     {!! Form::button("<i class='glyphicon glyphicon-remove'></i> Close",["class"=>"btn
     btn-danger","data-dismiss"=>"modal"])!!}
     {!! Form::button("<i class='glyphicon glyphicon-floppy-disk'></i> Save",["type" => "submit","class"=>"btn
-    btn-danger","id"=>"btn_save"])!!}
+    btn-primary","id"=>"btn_save"])!!}
 </div>
