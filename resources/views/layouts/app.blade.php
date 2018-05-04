@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="pull-right" style="padding-top: 10px; padding-right: 10px;font-size: 16px">
-   <br> Hello,{{ucwords(Auth::user()->username)}}  <a href="{{url('/logout')}}" onclick="event.preventDefault();
+   <br> <i class="glyphicon glyphicon-user"></i> {{ucwords(Auth::user()->username)}}  <a href="{{url('/logout')}}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();"><br><i class="glyphicon glyphicon-log-out"></i>Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST"
           style="display: none;">
@@ -105,6 +105,7 @@
     </div>
 </div>
 <div class="loading"></div>
+
 <!-- JavaScripts -->
 <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
 <script src="{{ asset('bootstrap-3.3.7/js/bootstrap.min.js') }}"></script>
