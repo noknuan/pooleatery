@@ -57,8 +57,8 @@
 </div>
 <div class="modal-footer">
     <p id="msg" style="display: none;color: blue;float: left;">{{env('success_msg')}}</p>
-    {!! Form::button("<i class='glyphicon glyphicon-remove'></i> Close",["class"=>"btn
-    btn-primary","data-dismiss"=>"modal"])!!}
     {!! Form::button("<i class='glyphicon glyphicon-floppy-disk'></i> Save",["type" => "submit","class"=>"btn
     btn-primary","id"=>"btn_save"])!!}
+    {!! Form::button("<i class='glyphicon glyphicon-remove'></i> Close",["class"=>"btn
+    btn-danger","data-dismiss"=>"modal"])!!}
 </div>
