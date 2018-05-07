@@ -103,7 +103,7 @@
                 <tr>
                     <th style="text-align: right;padding-right: 20px">Customer:</th>
                     <th style="text-align: right">
-                        {!! Form::select('customer',['0'=>'General']+\App\Customer::orderBy('name')->pluck('name','id')->toArray() ,$order->customer_id,['style'=>'border:none','onChange'=>"ajaxLoad('cashier/update-customer/".$order->id."/'+this.value,'orderList')"]) !!}
+                        {!! Form::select('customer',['0'=>'General']+\App\Customer::orderBy('name')->pluck('name','id')->toArray() ,$order->customer_id,['style'=>'border:1;background-color: orange','onChange'=>"ajaxLoad('cashier/update-customer/".$order->id."/'+this.value,'orderList')"]) !!}
                     </th>
                 </tr>
                 <tr>

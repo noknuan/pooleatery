@@ -12,7 +12,7 @@
     $("#updateForm_pay").submit(function (event) {
         $("#btn_save").attr('disabled', 'disabled').html("<i class='glyphicon glyphicon-floppy-disk'></i> Saving...");
         event.preventDefault();
-        $("#updateForm input").css("pointer-events", "none");
+        $("#updateForm_pay input").css("pointer-events", "none");
         $('.loading').show();
         var form = $(this);
         var data = form.serialize();
@@ -45,12 +45,12 @@
                 }
                 $('.loading').hide();
                 $("#btn_save").removeAttr('disabled').html("<i class='glyphicon glyphicon-floppy-disk'></i> Save");
-                $("#updateForm input").css("pointer-events", "");
+                $("#updateForm_pay input").css("pointer-events", "");
             },
             error: function (xhr, textStatus, errorThrown) {
                 alert(textStatus);
                 $("#btn_save").removeAttr('disabled').html("<i class='glyphicon glyphicon-floppy-disk'></i> Save");
-                $("#updateForm input").css("pointer-events", "");
+                $("#updateForm_pay input").css("pointer-events", "");
             }
         });
         return false;
