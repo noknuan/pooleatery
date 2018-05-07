@@ -1,13 +1,15 @@
+
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
     </button>
     <h4 class="modal-title">Payment</h4>
 </div>
-{!! Form::open(["id"=>"updateForm"]) !!}
+{!! Form::open(["id"=>"updateForm_pay"]) !!}
 @include("cashier._pay")
 {!! Form::close() !!}
 <script>
-    $("#updateForm").submit(function (event) {
+
+    $("#updateForm_pay").submit(function (event) {
         $("#btn_save").attr('disabled', 'disabled').html("<i class='glyphicon glyphicon-floppy-disk'></i> Saving...");
         event.preventDefault();
         $("#updateForm input").css("pointer-events", "none");
@@ -53,4 +55,5 @@
         });
         return false;
     });
+
 </script>

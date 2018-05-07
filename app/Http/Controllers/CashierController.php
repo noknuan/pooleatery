@@ -218,7 +218,8 @@ class CashierController extends Controller
             $orderDetail->user_id = Auth::user()->id;
             $orderDetail->save();
             Session::put('order_id', $order->id);
-            return view('cashier._order', ['order' => $order]);
+            //return view('cashier._order', ['order' => $order]);
+            return view('cashier._order', ['order' => Order::find(Session::get('order_id'))]);
         }
     }
 
