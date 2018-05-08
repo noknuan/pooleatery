@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\User;
@@ -21,7 +22,7 @@ class UserController extends Controller
         $users = new User();
         if (Session::get('user_role') != -1)
             $users = $users->where('role', Session::get('user_role'));
-        $users = $users->where('username', 'like', '%' . Session::get('user_search') . '%')
+            $users = $users->where('username', 'like', '%' . Session::get('user_search') . '%')
             ->where('role', '!=', 'SuperAdmin')
             ->orderBy(Session::get('user_field'), Session::get('user_sort'))->paginate(10);
         return view('user.index', ['users' => $users]);

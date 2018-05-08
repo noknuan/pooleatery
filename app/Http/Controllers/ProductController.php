@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\ResizeImageFile;
@@ -22,7 +23,7 @@ class ProductController extends Controller
         $products = new Product();
         if (Session::get('product_category') != -1)
             $products = $products->where('product_category_id', Session::get('product_category'));
-        $products = $products->where('name', 'like', '%' . Session::get('product_search') . '%')
+            $products = $products->where('name', 'like', '%' . Session::get('product_search') . '%')
             ->orderBy(Session::get('product_field'), Session::get('product_sort'))->paginate(10);
         return view('product.index', ['products' => $products]);
     }
@@ -45,7 +46,7 @@ class ProductController extends Controller
             $rules = ["unitprice" => "required|numeric"];
             if ($product->name != Input::get('name'))
                 $rules += ['name' => 'required|unique:products'];
-            $validator = Validator::make(Input::all(), $rules);
+                $validator = Validator::make(Input::all(), $rules);
             if ($validator->fails()) {
                 return array(
                     'fail' => true,

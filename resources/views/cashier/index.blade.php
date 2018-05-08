@@ -10,9 +10,10 @@
             @endforeach
         </div>
         <div class="col-md-4">
-            <input type="text"  class="form-control" placeholder="Type your search item here..."
+            <input type="text" id="search" class="form-control" placeholder="Type your search item here..."
                    style="border: 1px solid whitesmoke;height: 40px;overflow-y: auto;border-radius: 0px;background: lightyellow;font-size: 16px"
-                   onfocus="$(this).select()"
+                   onfocus="$(this).val('')"
+                   onfocusout="$(this).val('Type your search item here...')"
                    onkeyup="ajaxLoad('cashier/products?search='+this.value,'productList')"/>
             <div id="productList">
                 <ul class="list-group"

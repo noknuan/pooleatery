@@ -1,4 +1,3 @@
-
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
     </button>
@@ -40,7 +39,7 @@
                     $(".help-block").empty();
                     $("#modal_pay").find('form')[0].reset();
                     $('#modal_pay').modal('hide');
-                    ajaxLoad('{{url('cashier/return-order')}}','orderList');
+                    ajaxLoad('{{url('cashier/return-order')}}', 'orderList');
                     window.open('{{url("cashier/print-payment")}}');
                 }
                 $('.loading').hide();

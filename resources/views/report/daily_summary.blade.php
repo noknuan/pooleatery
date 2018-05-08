@@ -15,7 +15,7 @@
     </div>
 </div>
 <h2 style="text-align: center;padding: 10px;background: #b0dfe7">
-     {{number_format($orders['Total']['total'],2)}} บาท</h2>
+    {{number_format($orders['Total']['total'],2)}} บาท</h2>
 <div class="row">
     <div class="col-md-6">
         <table class="table table-bordered">
@@ -28,7 +28,7 @@
             <tbody>
             @foreach($sale as $key=>$value)
                 @if($key!='Total')
-                    <tr style="font-size: 14px"  bgcolor="#fffacd">
+                    <tr style="font-size: 14px" bgcolor="#fffacd">
                         <td>{{$key}}</td>
                         <td align="right"> {{number_format($value['total'],2)}}</td>
                     </tr>
@@ -40,7 +40,7 @@
     <div class="col-md-6">
         <table class="table table-bordered">
             <thead>
-            <tr style="font-size:14px" bgcolor="#a9a9a9" >
+            <tr style="font-size:14px" bgcolor="#a9a9a9">
                 <th style="text-align: center">Period</th>
                 <th style="text-align: center">Total</th>
             </tr>
