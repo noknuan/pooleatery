@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
+use PDF;
+
 
 class ReportController extends Controller
 {
@@ -123,6 +125,10 @@ class ReportController extends Controller
             ->where('order_details.deleted_at', NULL)
             ->groupBy(DB::raw("date(orders.created_at)"))
             ->first();
-        return view('report.print_daily_summary', ['orders' => $order, 'sale' => $sale]);
+        //return view('report.print_daily_summary', ['orders' => $order, 'sale' => $sale]);
+        PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
+        $pdf=PDF::loadView('report.print_daily_summary', ['orders' => $order, 'sale' => $sale]);
+        $pdf->setPaper('A4');
+        return $pdf->stream("report.pdf", array("Attachment" => false));
     }
 }
