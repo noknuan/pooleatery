@@ -1,17 +1,10 @@
-<!doctype html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+<style>
         *{ font-family: DejaVu Sans !important;}
         .page-break {
             page-break-after: always;
         }
-    </style>
-</head>
-<body>
+</style>
+
 <center>
     <h4 style="padding: 0px;margin: 0px">The Pool Eatery</h4>
     <h4 style="padding: 0px;margin: 0px">Invoice</h4>
@@ -83,5 +76,3 @@
         </td>
     </tr>
 </table>
-</body>
-</html>

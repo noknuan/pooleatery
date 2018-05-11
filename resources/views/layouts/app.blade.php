@@ -24,8 +24,10 @@
 </head>
 <body>
 <div class="pull-right" style="padding-top: 10px; padding-right: 10px;font-size: 16px">
-   <br> <i class="glyphicon glyphicon-user"></i> {{ucwords(Auth::user()->username)}}  <a href="{{url('/logout')}}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();"><br><i class="glyphicon glyphicon-log-out"></i>Logout</a>
+    <br> <i class="glyphicon glyphicon-user"></i> {{ucwords(Auth::user()->username)}} <a href="{{url('/logout')}}"
+                                                                                         onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();"><br><i
+                class="glyphicon glyphicon-log-out"></i>Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST"
           style="display: none;">
         {{ csrf_field() }}
@@ -44,22 +46,25 @@
         <div class="col-sm-4 col-md-3">
             <div class="collapse navbar-collapse" id="menu" style="background:#4f80ff ; border: doubles">
                 <div style="background: #0a0208;margin: 10px 0;padding: 4px 0">
-                <table width="100%">
-                    <tr bgcolor="#a9a9a9">
-                        <td width="30%" style="padding:0 5px 0 5px"></td>
-                        <td>
-                            <b style="font-size: 150%;color: #fafffe"> Admin Menu </b></td>
-                    </tr>
-                </table>
-            </div>
+                    <table width="100%">
+                        <tr bgcolor="#a9a9a9">
+                            <td width="30%" style="padding:0 5px 0 5px"></td>
+                            <td>
+                                <b style="font-size: 150%;color: #fafffe"> Admin Menu </b></td>
+                        </tr>
+                    </table>
+                </div>
                 <ul class="nav nav-stacked" id="sidebar" style="margin-bottom: 100px">
                     <li class="nav_home">
                         <a href="#home"><i class="glyphicon glyphicon-home"></i> Sale Summary</a>
                     </li>
-                    <li><a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-tags"></i> Master Data</a>
+                    <li><a href="#" style="pointer-events: none"><i class="glyphicon glyphicon-tags"></i> Master
+                            Data</a>
                         <ul class="nav" id="sidebar">
-                            <li class="nav_table"><a href="#table"><i class="glyphicon glyphicon-cog"></i> Table</a></li>
-                            <li class="nav_customer"><a href="#customer"><i class="glyphicon glyphicon-cog"></i> Customer</a></li>
+                            <li class="nav_table"><a href="#table"><i class="glyphicon glyphicon-cog"></i> Table</a>
+                            </li>
+                            <li class="nav_customer"><a href="#customer"><i class="glyphicon glyphicon-cog"></i>
+                                    Customer</a></li>
                         </ul>
                     </li>
 
@@ -81,7 +86,8 @@
                         <ul class="nav" id="sidebar">
 
                             <li class="nav_report_daily-summary">
-                                <a href="#report/daily-summary"><i class="glyphicon glyphicon-cog"></i> Daily Summary Report</a>
+                                <a href="#report/daily-summary"><i class="glyphicon glyphicon-cog"></i> Daily Summary
+                                    Report</a>
                             </li>
 
                         </ul>
@@ -92,8 +98,7 @@
                     @endif
                     <li class="nav_change-password"><a href="#change-password"><i
                                     class="glyphicon glyphicon-wrench"></i>
-                            Change
-                            Password</a>
+                            Change Password</a>
                     </li>
 
                 </ul>

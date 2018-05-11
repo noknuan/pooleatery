@@ -1,4 +1,3 @@
-
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
     </button>
@@ -12,7 +11,7 @@
     $("#updateForm_pay").submit(function (event) {
         $("#btn_save").attr('disabled', 'disabled').html("<i class='glyphicon glyphicon-floppy-disk'></i> Saving...");
         event.preventDefault();
-        $("#updateForm input").css("pointer-events", "none");
+        $("#updateForm_pay input").css("pointer-events", "none");
         $('.loading').show();
         var form = $(this);
         var data = form.serialize();
@@ -40,17 +39,17 @@
                     $(".help-block").empty();
                     $("#modal_pay").find('form')[0].reset();
                     $('#modal_pay').modal('hide');
-                    ajaxLoad('{{url('cashier/return-order')}}','orderList');
+                    ajaxLoad('{{url('cashier/return-order')}}', 'orderList');
                     window.open('{{url("cashier/print-payment")}}');
                 }
                 $('.loading').hide();
                 $("#btn_save").removeAttr('disabled').html("<i class='glyphicon glyphicon-floppy-disk'></i> Save");
-                $("#updateForm input").css("pointer-events", "");
+                $("#updateForm_pay input").css("pointer-events", "");
             },
             error: function (xhr, textStatus, errorThrown) {
                 alert(textStatus);
                 $("#btn_save").removeAttr('disabled').html("<i class='glyphicon glyphicon-floppy-disk'></i> Save");
-                $("#updateForm input").css("pointer-events", "");
+                $("#updateForm_pay input").css("pointer-events", "");
             }
         });
         return false;

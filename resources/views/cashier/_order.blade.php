@@ -6,12 +6,13 @@
 <div class="row" style="padding-left: 20px">
     <a title="Table" class="btn btn-success pay" data-toggle="modal" data-target="#modal"
        href="cashier/table">
-        <i class="glyphicon glyphicon-cutlery"></i> <b id="table_id">{{Session::has('table_id')?\App\Table::find(Session::get('table_id'))->name:'Table #'}}</b>
+        <i class="glyphicon glyphicon-cutlery"></i> <b
+                id="table_id">{{Session::has('table_id')?\App\Table::find(Session::get('table_id'))->name:'Table #'}}</b>
     </a>
 
-    <a  style="@if(Session::get('table_id')=='') pointer-events: none @endif"
-            class="btn btn-primary pay" data-toggle="modal" data-target="#modal_open" href="cashier/open">
-       <i class="glyphicon glyphicon-plus-sign"></i> New Order
+    <a style="@if(Session::get('table_id')=='') pointer-events: none @endif"
+       class="btn btn-primary pay" data-toggle="modal" data-target="#modal_open" href="cashier/open">
+        <i class="glyphicon glyphicon-plus-sign"></i> New Order
     </a>
 
     <a style="@if(Session::get('table_id')=='' || count($order)==0) pointer-events: none @endif"
@@ -21,7 +22,7 @@
     </a>
     <a class="btn btn-warning pay" data-toggle="modal" data-target="#modal_pay" href="cashier/pay"
        style="@if(Session::get('table_id')=='' || count($order)==0)  pointer-events: none @endif">
-        <i class ="glyphicon glyphicon-shopping-cart"></i> Receipt
+        <i class="glyphicon glyphicon-shopping-cart"></i> Receipt
     </a>
 </div>
 <br>
@@ -103,7 +104,7 @@
                 <tr>
                     <th style="text-align: right;padding-right: 20px">Customer:</th>
                     <th style="text-align: right">
-                        {!! Form::select('customer',['0'=>'General']+\App\Customer::orderBy('name')->pluck('name','id')->toArray() ,$order->customer_id,['style'=>'border:none','onChange'=>"ajaxLoad('cashier/update-customer/".$order->id."/'+this.value,'orderList')"]) !!}
+                        {!! Form::select('customer',['0'=>'General']+\App\Customer::orderBy('name')->pluck('name','id')->toArray() ,$order->customer_id,['style'=>'border:1;background-color: orange','onChange'=>"ajaxLoad('cashier/update-customer/".$order->id."/'+this.value,'orderList')"]) !!}
                     </th>
                 </tr>
                 <tr>
