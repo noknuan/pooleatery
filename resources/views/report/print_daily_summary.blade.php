@@ -43,7 +43,4 @@
         @endif
     @endforeach
 </table>
-<<<<<<< HEAD
-=======
-</body>
->>>>>>> b1d72a6b0868732d59bf4d8bb8ddd0fe0ce53660
+
