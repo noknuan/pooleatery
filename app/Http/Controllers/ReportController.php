@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Item;
@@ -8,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
+use PDF;
+
 
 class ReportController extends Controller
 {
@@ -108,7 +111,7 @@ class ReportController extends Controller
                 ->join('products', 'products.id', '=', 'order_details.product_id')
                 ->select(DB::raw('sum(order_details.quantity * order_details.price * (1-order_details.discount/100) * (1-orders.discount/100)) as total'))
                 ->where(DB::raw("date(orders.created_at)"), date('Y-m-d', strtotime(Session::get('report_from'))))
-                ->where('products.product_type_id', $key)
+                ->where('products.product_category_id', $key)
                 ->where('orders.status', 'Completed')
                 ->where('order_details.deleted_at', NULL)
                 ->groupBy(DB::raw("date(orders.created_at)"))
@@ -122,6 +125,10 @@ class ReportController extends Controller
             ->where('order_details.deleted_at', NULL)
             ->groupBy(DB::raw("date(orders.created_at)"))
             ->first();
-        return view('report.print_daily_summary', ['orders' => $order, 'sale' => $sale]);
+        //return view('report.print_daily_summary', ['orders' => $order, 'sale' => $sale]);
+        PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
+        $pdf=PDF::loadView('report.print_daily_summary', ['orders' => $order, 'sale' => $sale]);
+        $pdf->setPaper('A4');
+        return $pdf->stream("report.pdf", array("Attachment" => false));
     }
 }
