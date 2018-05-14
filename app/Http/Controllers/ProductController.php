@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use PDF;
 
 class ProductController extends Controller
 {
@@ -30,11 +31,17 @@ class ProductController extends Controller
 
     public function printProducts()
     {
-        if (Session::get('product_category') != -1)
+        if (Session::get('product_category') != -1) {
             $categories = ProductCategory::find(Session::get('product_category'));
-        else
+        }
+        else{
             $categories = ProductCategory::orderBy('name')->get();
-        return view('product.print', ['categories' => $categories]);
+        }
+        PDF::setOptions(['dpi' => 80, 'defaultFont' => 'sans-serif']);
+        $pdf=PDF::loadView('product.print', ['categories' => $categories]);
+        $pdf->setPaper('A4');
+        return $pdf->stream("report_product.pdf", array("Attachment" => false));
+        //return view('product.print', ['categories' => $categories]);
     }
 
     public function update(Request $request, $id)

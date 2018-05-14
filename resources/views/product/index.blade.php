@@ -2,7 +2,7 @@
     <div class="pull-right">
         <a href="javascript:ajaxLoad('product/create')" class="btn btn-success"><i
                     class="glyphicon glyphicon-plus-sign"></i> New</a>
-        <a href="{{url('product/print')}}" target="_blank" class="btn btn-primary"><i
+        <a href="{{url("product/print")}}" target="_blank" class="btn btn-primary"><i
                     class="glyphicon glyphicon-print"></i> Print</a>
     </div>
 </h1>

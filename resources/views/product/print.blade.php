@@ -1,27 +1,34 @@
-<link href="{{ asset('bootstrap-3.3.7/css/bootstrap.min.css') }}" rel="stylesheet">
-<div class="container-fluid">
-    <h1 class="page-header">Product List </h1>
-    <table class="table table-bordered">
+<style>
+    *{ font-family: DejaVu Sans !important;}
+    .page-break {
+        page-break-after: always;
+    }
+</style>
+<h1 class="page-header">Product List </h1>
+    <table style="width:100%">
         <thead>
-        <tr>
-            <th width="80px" style="text-align: center"> Code</th>
-            <th> Name</th>
-            <th style="text-align: right">Unitprice</th>
+        <tr style="font-size:14px">
+            <th width="20%" style="text-align: center" bgcolor="#a9a9a9"> Code</th>
+            <th width="50%" style="text-align: center" bgcolor="#a9a9a9"> Name</th>
+            <th width="30%" style="text-align: center" bgcolor="#a9a9a9">Unit Price (Bath) </th>
         </tr>
         </thead>
-        <tbody>
+        <tbody style="font-size: 12px">
         @foreach($categories as $key=>$category)
-            <tr style="background: whitesmoke">
+            <tr>
                 <th colspan="3">{{$category->name}}</th>
             </tr>
             @foreach($category->products as $product)
                 <tr>
                     <td align="center">{{$product->id}}</td>
                     <td>{{$product->name}}</td>
-                    <td align="right">{{$product->unitprice}} บาท</td>
+                    <td align="right">{{$product->unitprice}}</td>
                 </tr>
             @endforeach
+            <tr>
+                <td colspan="3"><hr></td>
+            </tr>
+
         @endforeach
         </tbody>
     </table>
-</div>
