@@ -9,7 +9,7 @@
     <table style="width:100%">
         <thead>
         <tr style="font-size:14px; ">
-            <th width="20%" style="text-align: center" bgcolor="#a9a9a9"> Code</th>
+            <th width="20%" style="text-align: center" bgcolor="#a9a9a9"> No</th>
             <th width="50%" style="text-align: center" bgcolor="#a9a9a9"> Name</th>
             <th width="30%" style="text-align: center" bgcolor="#a9a9a9">Unit Price (Bath) </th>
         </tr>
