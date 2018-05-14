@@ -5,7 +5,7 @@
 }
 
 .loading {
-    background: lightgoldenrodyellow url('../images/processing.gif') no-repeat center 65%;
+    background: #15fff9 url('../images/processing.gif') no-repeat center 65%;
     height: 80px;
     width: 100px;
     position: fixed;
@@ -40,4 +40,11 @@
 body {  background-image: url("../images/cashier.jpg");
     background-repeat: round;
 
+}
+.picker__select--month, .picker__select--year {
+    height: inherit;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: white;
 }

@@ -12,15 +12,6 @@
     <link href="{{ asset('pickadate/themes/default.date.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/jquery-confirm.css') }}" rel="stylesheet">
-    <style>
-        .picker__select--month, .picker__select--year {
-            height: inherit;
-        }
-
-        .form-control:disabled, .form-control[readonly] {
-            background-color: white;
-        }
-    </style>
 </head>
 <body>
 <div class="pull-right" style="padding-top: 10px; padding-right: 10px;font-size: 16px">
