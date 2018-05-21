@@ -111,7 +111,7 @@
                     <th style="text-align: right;padding-right: 20px">Discount:</th>
                     <th style="text-align: right"><input onfocus="$(this).select()"
                                                          onchange="ajaxLoad('cashier/update-discount/{{$order->id}}/'+this.value,'orderList')"
-                                                         type="text"
+                                                         type="text" readonly
                                                          style="width: 50px;border: none;text-align: right"
                                                          value="@if(Session::get('order_id')!=''){{$order->discount}} @endif"/>
                         %

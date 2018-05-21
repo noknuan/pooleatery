@@ -35,7 +35,7 @@
 <div class="container-fluid" style="padding-bottom: 160px">
     <div class="row-fluid" style="margin-top: 10px">
         <div class="col-sm-4 col-md-3">
-            <div class="collapse navbar-collapse" id="menu" style="background:#4f80ff ; border: doubles">
+            <div class="collapse navbar-collapse" id="menu" style="background:#4f80ff ; border: double">
                 <div style="background: #0a0208;margin: 10px 0;padding: 4px 0">
                     <table width="100%">
                         <tr bgcolor="#a9a9a9">
