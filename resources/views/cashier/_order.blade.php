@@ -56,13 +56,13 @@
                     <td align="center">
                         <input onfocus="$(this).select()"
                                onchange="ajaxLoad('cashier/update-quantity/{{$orderDetail->id}}/'+this.value,'orderList')"
-                               type="text" style="width: 20px;border: none;height: 30px;text-align: center"
+                               type="text" style="width: 20px;border: none;height: 30px;text-align: center" readonly
                                value="{{$orderDetail->quantity}}"/>
                     </td>
                     <td align="right">
                         <input onfocus="$(this).select()"
                                onchange="ajaxLoad('cashier/update-price/{{$orderDetail->id}}/'+this.value,'orderList')"
-                               type="text" style="width: 45px;border: none;height: 30px;text-align: right"
+                               type="text" style="width: 45px;border: none;height: 30px;text-align: right" readonly
                                value="{{number_format($orderDetail->price,2)}}"/>
                     </td>
                     <td align="right">
