@@ -12,13 +12,14 @@
     <link href="{{ asset('pickadate/themes/default.date.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/jquery-confirm.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="pull-right" style="padding-top: 10px; padding-right: 10px;font-size: 16px">
-    <br> <i class="glyphicon glyphicon-user"></i> {{ucwords(Auth::user()->username)}} <a href="{{url('/logout')}}"
-                                                                                         onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();"><br><i
-                class="glyphicon glyphicon-log-out"></i>Logout</a>
+    <br> <i class="fa fa-user" style="font-size:20px;color:Tomato"></i> {{ucwords(Auth::user()->username)}} <a href="{{url('/logout')}}"
+                                                                                                                onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();"><br>
+        <i class="fa fa-sign-out"style="font-size:20px;color:Tomato"></i>Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST"
           style="display: none;">
         {{ csrf_field() }}
@@ -45,7 +46,7 @@
                         </tr>
                     </table>
                 </div>
-                <ul class="nav nav-stacked" id="sidebar" style="margin-bottom: 100px">
+                <ul class="nav nav-stacked" id="sidebar" style="margin-bottom: 30px">
                     <li class="nav_home">
                         <a href="#home"><i class="glyphicon glyphicon-home"></i> Sale Summary</a>
                     </li>
@@ -91,8 +92,12 @@
                                     class="glyphicon glyphicon-wrench"></i>
                             Change Password</a>
                     </li>
-
+                    <li style="padding-left: 50px">
+                    <i class="fa fa-coffee"style="font-size:50px;color:#fdfff8"></i>
+                        <i class="fa fa-spoon"style="font-size:50px;color:#fdfff8"></i>
+                    </li>
                 </ul>
+
             </div>
 
         </div>
