@@ -29,12 +29,8 @@
     <tr bgcolor="#a9a9a9">
         <th class="hidden-xs hidden-sm" style="text-align: center">Picture</th>
         <th width="80px" style="text-align: center">
-            <a href="javascript:ajaxLoad('product?field=id&sort={{Session::get("product_sort")=="asc"?"desc":"asc"}}')">
-                Code
-            </a>
-            <i style="font-size: 12px"
-               class="glyphicon  {{ Session::get('product_field')=='id'?(Session::get('product_sort')=='asc'?'glyphicon-sort-by-alphabet':'glyphicon-sort-by-alphabet-alt'):'' }}">
-            </i>
+                No
+           
         </th>
         <th>
             <a href="javascript:ajaxLoad('product?field=name&sort={{Session::get("product_sort")=="asc"?"desc":"asc"}}')">
@@ -57,7 +53,7 @@
                 <img src="{{$product->image!='' && File::exists('images/products/'.$product->image)?'/images/products/'.$product->image:'/images/default.jpg'}}"
                      width="80px" height="70px"/>
             </td>
-            <td align="center" style="vertical-align: middle">{{$product->id}}</td>
+            <td align="center" style="vertical-align: middle">{{$i++}}</td>
             <td style="vertical-align: middle">{{$product->name}}</td>
             <td class="hidden-xs hidden-sm"
                 style="vertical-align: middle">{{$product->product_category?$product->product_category->name:''}}</td>
