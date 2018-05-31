@@ -30,7 +30,7 @@
         <th class="hidden-xs hidden-sm" style="text-align: center">Picture</th>
         <th width="80px" style="text-align: center">
                 No
-           
+
         </th>
         <th>
             <a href="javascript:ajaxLoad('product?field=name&sort={{Session::get("product_sort")=="asc"?"desc":"asc"}}')">
